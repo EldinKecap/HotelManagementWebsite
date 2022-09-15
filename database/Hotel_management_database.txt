@@ -1,0 +1,77 @@
+create database Hotel_management_database;
+
+use Hotel_management_database;
+
+CREATE TABLE Admin(
+id int PRIMARY key AUTO_INCREMENT,
+username varchar(45),
+password varchar(45),
+logged_in BOOLEAN
+);
+
+insert INTO admin(username,password,logged_in)
+values('admin','12345678',false);
+
+CREATE TABLE Types_of_room(
+id int primary key AUTO_INCREMENT,
+type_of_room VARCHAR(100),
+price_of_room INT
+);
+
+CREATE TABLE Rooms(
+id int PRIMARY key AUTO_INCREMENT,
+room_number int,
+types_of_room_id int ,
+FOREIGN KEY Rooms(types_of_room_id) REFERENCES Types_of_room(id)
+);
+
+CREATE TABLE Customers (
+id int primary key AUTO_INCREMENT,
+first_name VARCHAR(45),
+last_name varchar(45),
+gender VARCHAR(45),
+date_of_birth date,
+jmbg VARCHAR(25) unique
+);
+
+CREATE TABLE User (
+id int primary key AUTO_INCREMENT,
+username VARCHAR(45) UNIQUE,
+password varchar(45),
+customer_id int,
+logged_in BOOLEAN,
+FOREIGN KEY User(customer_id) REFERENCES customers (id)
+);
+
+CREATE TABLE  user_room(
+id int primary key AUTO_INCREMENT,
+room_id int UNIQUE,
+user_id INT,
+time_of_arrival DATE,
+paid BOOLEAN,
+FOREIGN KEY User_room(user_id) REFERENCES user(id),
+FOREIGN KEY user_room(room_id) REFERENCES rooms(id)
+);
+
+CREATE TABLE  service(
+id int primary key AUTO_INCREMENT,
+type_of_service VARCHAR(255),
+price_of_service int
+);
+
+CREATE TABLE  user_service(
+id int primary key AUTO_INCREMENT,
+service_id int,
+user_id int ,
+time_of_use date,
+paid BOOLEAN,
+FOREIGN KEY (service_id) REFERENCES service(id),
+FOREIGN KEY (user_id) REFERENCES user(id)
+);
+
+insert into types_of_room(type_of_room,price_of_room) values 
+('Jednokrevetna',20),('Dvokrevetna',40),('Apartman',60);
+
+insert into service(type_of_service,price_of_service) values 
+('Teretana',10),('Kino',10),('Restoran',20),('Bazen',10),
+('Sauna',10);

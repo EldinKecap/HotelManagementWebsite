@@ -1,0 +1,67 @@
+Zadatak vam je da dizajnirate i implementirate bazu podataka za aplikaciju koja služi za hotel management. Opis šta aplikacija treba da radi i uzme u obzir se nalazi ispod.
+
+Aplikacija treba da ima dva usera tiera, dva user rolea:
+
+Admin
+Korisnik
+
+Admin može, i mora da:
+
+Registruje/Prijavi korisnika u hotel (Ime, prezime, spol, broj lične karte, godine, broj i tip sobe u kojoj će korisnik da boravi, vrijeme prijave u hotel, korisničko ime i password za korisnika ... )
+
+
+Promijeni informacije o korisniku tokom boravka (Promjena sobe i tipa sobe, dodatne usluge koje korisnik koristi)
+
+
+Izda račun za usluge koje je korisnik koristio tokom svoga boravka (Sauna, Bazen, Restoran, Teretana, Kino)
+
+
+Odjavi korisnika iz hotela
+
+
+Provjeri koji su korisnici logovani na sistemu, izloguje sve korisnike ili individualnog korisnika, "ugasi" sistem
+
+
+Pretraži bazu za određenog korisnika po imenu/broju lične karte/usernameu
+
+
+Arhivira korisnika po odjavi - ukoliko se isti gost/korisnik ponovo vrati u hotel, admin ne mora uzimati sve podatke iz prvog koraka ponovo
+
+Korisnik može da:
+
+Provjeri koliko je dužan hotelu (za koliko dana usluga), koje usluge koristi trenutačno te koliko koja usluga ga košta po danu
+
+
+Rezerviše/naruči nove usluge
+
+
+Traži promjenu sobe (jednokrevetnu, dvokrevetnu, apartman)
+
+
+Odjavi se iz hotela
+
+Neke stvari koje treba uzeti u obzir: 
+
+Kada admin prijavljuje korisnika u hotel, ne može ga prijaviti u sobu koja je već okupirana
+Kada admin prijavljuje korisnika u hotel, ne može mu dodijeliti već postojeće korisničko ime
+Kada se gost/korisnik odjavi iz hotela, admin mora odobriti odjavu i potvrditi izdavanja računa
+
+Cijene koje ćete koristi za usluge i sobe su nebitne, možete i sve obračunavati kao lump sum po danu - recimo:
+
+jednokrevetna soba 20 KM
+dvokrevetna soba 40 KM
+apartman 60 KM
+Teretana 10 KM
+Kino 10 KM
+Restoran 20 KM
+Bazen 10 KM
+Sauna 10 KM
+
+Jeftin ovaj hotel, znam. Cijene možete mijenjati, stvarno su nebitne. 
+
+Manje više, znate kako hoteli funkcionišu - nema se tu šta puno pisati.
+
+Ukoliko nešto nije jasno, slobodno pitajte. 
+
+Sretno :)
+
