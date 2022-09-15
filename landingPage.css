@@ -12,7 +12,7 @@ html{
 .heroImage{
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(./0226811146340571b748d9c03ef0854c.jpg);
+    background-image: url(./images/0226811146340571b748d9c03ef0854c.jpg);
     height: 1000px;
     /* for now */
     background-position-y: -200px ;
@@ -156,7 +156,7 @@ h2:after{
     padding: 0 10%;
 }
 .gridItem1{
-    background: url(./restingWoman.jpg);
+    background: url(./images/restingWoman.jpg);
     background-size:cover ;
     background-repeat: no-repeat;
     color: white;
@@ -165,7 +165,7 @@ h2:after{
 }
 .gridItem3{
     grid-area: 1/3/2/5;
-    background: url(./679627.jpg);
+    background: url(./images/679627.jpg);
     background-size:cover ;
     background-repeat: no-repeat;
     color: white;
@@ -176,7 +176,7 @@ h2:after{
 .gridItem4{
     grid-area: 2/1/3/3;
     
-    background: url(./maldives.jpg);
+    background: url(./images/maldives.jpg);
     background-size:cover ;
     background-repeat: no-repeat;
     color: white;
@@ -187,7 +187,7 @@ h2:after{
 }
 
 .gridItem6{
-    background: url(./2fe2ac0d-4abe-4316-9dd2-011fb65a5587.jpg);
+    background: url(./images/2fe2ac0d-4abe-4316-9dd2-011fb65a5587.jpg);
     background-size:cover ;
     background-repeat: no-repeat;
     color: white;
@@ -196,7 +196,7 @@ h2:after{
 }
 
 .gridItem9{
-    background: url(./Baros-Maldives_Nooma-Cruise-min.jpg);
+    background: url(./images/Baros-Maldives_Nooma-Cruise-min.jpg);
     background-size:cover ;
     background-repeat: no-repeat;
     color: white;
@@ -222,7 +222,7 @@ footer h2 {
         grid-area: unset;
         /* background-size: unset; */
         background-position-y: 0px ;
-        background-image: url(./surfing.jpg);
+        background-image: url(./images/surfing.jpg);
     }
     .gridItem4{
         grid-area: unset;
