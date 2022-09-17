@@ -80,7 +80,7 @@ html{
 
 .introText{
     color:black;
-    
+    /* border-bottom: solid aquamarine 1px; */
     text-align: center;
     padding-top: 30px;
     width: 100%;
@@ -218,23 +218,103 @@ footer h2 {
     .gridTextImages{
         grid-template-columns: 1fr 1fr;
     }
+
+    .gridItem1{
+        order: 2;
+    }
+
+    .gridItem2{
+        order: 1;
+    }
+    
     .gridItem3{
         grid-area: unset;
         /* background-size: unset; */
         background-position-y: 0px ;
         background-image: url(./images/surfing.jpg);
+        order: 3;
     }
+
     .gridItem4{
         grid-area: unset;
         background-size: unset;
+        order: 7;
+    }
+
+    .gridItem5{
+        order: 5;
+    }
+
+    .gridItem6{
+        order: 6;
+    }
+
+    .gridItem7{
+        order: 4;
+    }
+
+    .gridItem8{
+        order: 8;
+    }
+
+    .gridItem9{
+        order: 10;
+    }
+
+    .gridItem10{
+        order: 9;
     }
 }
+@media(max-width:1200px){
 
+    .gridItem4{
+        background-position-x: -200px;
+    }
+
+}
 @media (max-width:700px){
+
     .gridTextImages{
         grid-template-columns: 1fr;
     }
+
+    .gridItem1{
+        order: 1;
+    }
+
+    .gridItem2{
+        order: 2;
+    }
+
     .gridItem3{
-        order:2;
+        order: 3;
     }    
+
+    .gridItem4{
+        order: 8;
+    }
+
+    .gridItem5{
+        order: 5;
+    }
+
+    .gridItem6{
+        order: 6;
+    }
+
+    .gridItem7{
+        order: 7;
+    }
+
+    .gridItem8{
+        order: 9;
+    }
+
+    .gridItem9{
+        order: 9;
+    }
+
+    .gridItem10{
+        order: 10;
+    }
 }
