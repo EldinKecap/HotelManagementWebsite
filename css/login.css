@@ -1,0 +1,90 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.background{
+    background: url(../loginBG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.backgroundTint{
+    height: 100vh;
+    animation-name: tint;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+}
+
+@keyframes tint {
+0%{
+    background-color: transparent;
+}
+
+100%{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    padding: 2vh;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 15px;
+    width: 200px;
+    box-shadow: inset 1px 1px 10px 10px rgba(255, 255, 255, 0.137);
+    margin-top: 25vh;
+    color: white;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    animation-name: popUp;
+    animation-duration: 1.75s;
+}
+
+@keyframes popUp{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+h1{
+    opacity: 0.7;
+}
+
+input[type='text'], input[type='password'] {
+    margin: 10px 10px 25px 10px; 
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.164);
+    height: 30px;
+}
+
+::-webkit-input-placeholder{
+    font-family:  sans-serif;
+    font-size: 19px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+button{
+    opacity: unset;
+    margin: 10px 0px;
+    padding: 5px 15px;
+    border-radius: 5px ;
+    background-color: rgba(255, 255, 255, 0.747);
+    color: rgba(0, 0, 0, 0.822);
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    width: 60%;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+button:hover{
+    background-color:rgba(255, 255, 255, 0.281);
+}
