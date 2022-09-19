@@ -39,7 +39,7 @@ body{
     box-shadow: inset 1px 1px 10px 10px rgba(255, 255, 255, 0.137);
     margin-top: 25vh;
     color: white;
-    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
     animation-name: popUp;
     animation-duration: 1.75s;
 }
