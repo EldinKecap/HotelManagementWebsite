@@ -161,6 +161,20 @@ footer h2 {
     font-weight: 500;
 }
 
+footer a{
+    text-align: center;
+    display: block;
+}
+
+footer img{
+    width: 50px;
+    height: auto;
+}
+
+footer img:hover{
+    width: 55px;
+}
+
 @media (max-width:1800px){
     .gridTextImages{
         grid-template-columns: 1fr 1fr;
@@ -299,3 +313,4 @@ footer h2 {
         background-position-y: -1500px;
     }
 }
+
