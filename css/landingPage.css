@@ -265,3 +265,37 @@ footer h2 {
         order: 10;
     }
 }
+
+
+@media(min-width:1900px){
+    .heroImage{
+        background-position-y: -300px;
+    }
+}
+
+@media(min-width:2000px){
+    .heroImage{
+        background-position-y: -500px;
+    }
+    p{
+        font-size: large;
+    }
+}
+
+@media(min-width:2370px){
+    .heroImage{
+        background-position-y: -800px;
+    }
+}
+
+@media(min-width:2850px){
+    .heroImage{
+        background-position-y: -1200px;
+    }
+}
+
+@media(min-width:3500px){
+    .heroImage{
+        background-position-y: -1500px;
+    }
+}
