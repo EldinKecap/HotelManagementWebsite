@@ -159,6 +159,7 @@ footer h2 {
     width: 100%;
     text-align: center;
     font-weight: 500;
+    margin-bottom: 0px;
 }
 
 footer a{
@@ -226,6 +227,7 @@ footer img:hover{
         order: 9;
     }
 }
+
 @media(max-width:1200px){
 
     .gridItem4{
@@ -233,6 +235,7 @@ footer img:hover{
     }
 
 }
+
 @media (max-width:700px){
 
     .gridTextImages{

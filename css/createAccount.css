@@ -1,0 +1,10 @@
+.loginForm{
+    width: 600px;
+}
+
+@media (max-width:666px){
+    .loginForm{
+        width: 250px;
+        margin-top: 10vh;
+    }
+}
