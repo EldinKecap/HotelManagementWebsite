@@ -36,7 +36,7 @@ body{
     border: 1px solid rgba(255, 255, 255, 0);
     border-radius: 15px;
     width: 250px;
-    box-shadow: inset 1px 1px 10px 10px rgba(255, 255, 255, 0.137);
+    box-shadow: inset 0px 0px 10px 10px rgba(255, 255, 255, 0.137), 0px 0px 20px 5px rgba(0, 0, 0, 0.171);
     margin-top: 20vh;
     color: white;
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
