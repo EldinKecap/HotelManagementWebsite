@@ -41,7 +41,7 @@ body{
     color: white;
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
     animation-name: popUp;
-    animation-duration: 1.75s;
+    animation-duration: 0.75s;
 }
 
 @keyframes popUp{
@@ -65,10 +65,13 @@ input[type='text'], input[type='password'] {
     height: 30px;
 }
 
+
+
+
 ::-webkit-input-placeholder{
     font-family:  sans-serif;
     font-size: 19px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.793);
 }
 
 button{
@@ -98,4 +101,8 @@ button:hover{
     display: block;
     text-decoration: underline;
     opacity: 1;
+}
+
+.wrongInput{
+    border-bottom: 1px solid rgba(255, 0, 0, 0.681) !important;
 }

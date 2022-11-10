@@ -1,26 +1,33 @@
-///
-// let createAcc = document.getElementById('createAcc')
-// createAcc.addEventListener('click',(e)=>{
-//     let createAccObj = {
-//         firstNameVal:firstName.value,
-//         lastNameVal:lastName.value,
-//         usernameVal:username.value,
-//         passwordVal:password.value,
-//         confirmPasswordVal:confirmPassword.value
-//     };
-//     console.log(createAccObj);
-//     e.preventDefault();
+const express = require('express');
+const conn = require('./database');
+const cors = require('cors');
+let app = express();
+
+
+app.use(express.json());
+app.use(cors());
+
+
+
+app.post('/createAccount',(req,res)=>{
+    let { createAccountInformation } = req.body;
+    console.log(createAccountInformation);
+    conn.execute('INSERT INTO customer(first_name,last_name) VALUES(?,?)',[createAccountInformation.firstName,createAccountInformation.lastName],(err,res,field)=>{
+        console.log(res);
+        console.log(field);
+    });
+    res.json({ success : true })
+})
+
+
+// conn.connect(function(err){
+//     if (err) {
+//         throw err;
+//     }
+//     console.log('connected');
 // })
 
-///
 
-
-let conn = require('./database');
-
-
-conn.connect(function(err){
-    if (err) {
-        throw err;
-    }
-    console.log('connected');
-})
+    app.listen(5000,()=>{
+        console.log('Server is listening on port 5000...');
+    })

@@ -1,5 +1,27 @@
 {
   "dependencies": {
-    "mysql": "^2.18.1"
-  }
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20"
+  },
+  "name": "hotel-management-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon javascriptReq/createAccountReq.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EldinKecap/HotelManagementWebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EldinKecap/HotelManagementWebsite/issues"
+  },
+  "homepage": "https://github.com/EldinKecap/HotelManagementWebsite#readme",
+  "description": ""
 }

@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/createAccount.css">
     <script defer src="./javascript/header.js"></script>
-    <script defer src="./javascriptReq/createAccountReq.js"></script>
-    
+    <!-- <script defer src="./javascriptReq/createAccountReq.js"></script> -->
+    <script defer src="./javascript/createAccount.js"></script>
 </head>
 <body>
     <div class="background">
         <div class="backgroundTint">
             <div id="headerContainer"></div>
             <div class = "loginForm">
-                <form action="">
+                <div class="form">                    
                     <h1>Create account</h1>
                     <label for="firstName">
                         <input type="text" id="firstName" name="firstName" placeholder="Enter first name">
@@ -33,8 +33,8 @@
                     <label for="confirmPassword">
                         <input type="password" id = "confirmPassword" name="confirmPassword" placeholder="Confirm password">
                     </label>
-                    <button type="submit" id="createAcc">CREATE ACCOUNT</button>
-                </form>
+                    <button type="button" id="createAccount">CREATE ACCOUNT</button>
+                </div>
             </div>
         </div>
     </div>
