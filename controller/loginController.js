@@ -1,3 +1,3 @@
 module.exports = {
-    get : (req,res)=>res.send('Logged in')
+    get : (req,res)=>res.send({status : 'Logged in'})
 }

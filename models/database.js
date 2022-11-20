@@ -6,7 +6,9 @@ let conn = mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'root',
-    port:3307
+    port:3306
 })
+
+// console.log(conn);
 
 module.exports = conn;
