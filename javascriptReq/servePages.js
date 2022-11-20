@@ -1,9 +1,18 @@
 let express = require('express');
-let conn = require('./database');
+const createNewAccountRouter = require('../routes/createNewAccountRouter');
 let app = express();
-//went to work on creating an account
-app.use(express.static('../'));
 
-app.get('/',(req,res)=>{
-    res.send()
+app.use(express.json());
+// app.use(cors());
+app.use(express.static('public'));
+app.use('/createNewAccount',createNewAccountRouter);
+
+app.get((req,res)=>{
+    res.sendFile('/index.html');
+})
+
+
+
+app.listen(5000,()=>{
+    console.log("app listening on port 5000");
 })

@@ -1,4 +1,5 @@
-const createNewAccount = (req,res)=>{
+let conn = require('../models/database');
+const createNewAccount = (req,res,next)=>{
     let { createAccountInformation } = req.body;
     console.log(createAccountInformation);
     conn.execute('INSERT INTO customer(first_name,last_name) VALUES(?,?)',[createAccountInformation.firstName,createAccountInformation.lastName],(err,res,field)=>{
