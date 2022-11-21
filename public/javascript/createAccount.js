@@ -23,6 +23,13 @@ submitCreateAccount.addEventListener('click',()=>{
         })
         .then((data)=>{
             console.log(data);
+            if (data.success) {
+                localStorage.setItem('user',JSON.stringify(data));
+                // console.log(window.location.href);
+                window.location.href = 'index.html';
+            }else{
+                username.classList.add('wrongInput')
+            }
         });
     }
 })
