@@ -7,7 +7,7 @@ headerContainer.innerHTML = `<div class="headerBar">
     <ul class="navList">
         <li class="navListItem"><a href="./index.html">Home</a></li>
         <li class="navListItem"><a href="./index.html#aboutHeading">About</a></li>
-        <li class="navListItem">Home</li>
+        <li class="navListItem"><a href="./rooms.html">Rooms</a></li>
         <li class="navListItem" id="loginIcon"><a href='./login.html'>Log in</a></li>
     </ul>
 </div>
