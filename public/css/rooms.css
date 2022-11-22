@@ -53,12 +53,26 @@ img{
 .roomTitle:after{
     content: " ";
     background-color: aqua;
-    width: 7rem;
+    width: 7.5rem;
     height: 1px;
     border: solid 1px aquamarine;
     border-radius: 10%;
     display: block;
-    margin-top:5px;
+    margin-top:3px;
+}
+
+button{
+    background-color: rgba(0, 255, 255, 0.276);
+    border: solid rgba(0, 255, 255, 0.563);
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 600;
+    margin: 0px 10px;
+}
+
+button:hover {
+    background-color: rgba(0, 255, 255, 0.485);
 }
 
 @media (max-width:800px){
