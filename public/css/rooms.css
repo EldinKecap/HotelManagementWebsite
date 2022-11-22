@@ -1,5 +1,5 @@
 body{
-    background-image: url('../roomImages/background/pexels-pixabay-462024.jpg');
+    background-image:linear-gradient( rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.3)), url('../roomImages/background/pexels-pixabay-462024.jpg');
     background-size: cover;
     background-position: center;
     padding: 0%;
@@ -16,7 +16,7 @@ body{
 .roomsContainerGrid{
     display: grid;
     grid-template-columns: repeat(3,minmax(100px,300px));
-    gap: 30px;
+    gap: 40px;
     margin: 30px;
     justify-content: center;
     column-gap: 4%;
