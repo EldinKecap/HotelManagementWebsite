@@ -129,7 +129,7 @@ h2:after{
     color: white;
     height: 300px;
     padding: 0 10%;
-    background-position: 0 -200px;
+    background-position: center;
 
 }
 
@@ -239,7 +239,8 @@ footer img:hover{
 @media(max-width:1200px){
 
     .gridItem4{
-        background-position-x: -200px;
+        background-position: center;
+        background-position-y: -200px;
     }
 
 }
