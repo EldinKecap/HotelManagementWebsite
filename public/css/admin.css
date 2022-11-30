@@ -61,13 +61,69 @@ body{
     width: 10px;
   }
   
-  ::-webkit-scrollbar-track-piece{
+::-webkit-scrollbar-track-piece{
     background-color: white;
     border-radius: 10px;
   }
   
-  ::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb{
     background-color: lightgray;
     border-radius: 10px;
   }
   
+.rooms {
+    display: flex;
+    background-color: rgba(240, 248, 255, 0.165);
+    width: 95%;
+    border-radius: 20px;
+    height: 80vh;
+    margin-top: 10px;
+}
+
+.roomContainer {
+    width: 45%;
+    margin: 3%;
+    background-color: rgba(0, 0, 0, 0.104);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    height: 330px;
+    overflow:hidden;
+}
+
+.roomContainer > img{
+    width:100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    height: 50%;
+}
+
+.roomDescription{
+    font-size: 11px;
+    text-align: justify;
+    padding: 5%;
+}
+
+.roomDescription > h1{
+    margin-top: 0px;
+}
+
+.roomContainer > p{
+    margin-top: -10px;
+}
+
+.adminMenu{
+    background-color: rgba(240, 248, 255, 0.165);
+    margin-top: 10px;
+    border-radius: 20px;
+    text-align: center;
+    width: 95%;
+    height: 80vh;
+}
+
+li{
+    list-style-type: none;
+}
+
+ul{
+    padding: 0px;
+}
