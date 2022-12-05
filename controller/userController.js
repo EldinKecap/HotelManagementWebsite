@@ -1,10 +1,11 @@
-const { createNewAccountModel } = require('../models/createAccountModel');
-const { getUser } = require('../services/getUser');
+const userModel  = require('../models/userModel');
+const { getUser } = require('../utils/getUser');
+let userController = {};
 
-const createNewAccount = (req,res,next)=>{
+userController.create = (req,res,next)=>{
     let { createAccountInformation } = req.body;
     console.log(createAccountInformation);
-    createNewAccountModel(createAccountInformation,(result)=>{
+    userModel.create(createAccountInformation,(result)=>{
         if (result) {
         getUser(result,(user)=>{
                 user.success = true;
@@ -17,4 +18,4 @@ const createNewAccount = (req,res,next)=>{
     })
 }
 
-module.exports = createNewAccount;
+module.exports = userController;

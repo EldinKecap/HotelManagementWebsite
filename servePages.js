@@ -1,13 +1,13 @@
 let express = require('express');
-const createNewAccountRouter = require('../routes/createNewAccountRouter');
-const loginRouter = require('../routes/loginRouter')
+const userRouter = require('./routes/userRouter');
+const loginRouter = require('./routes/loginRouter')
 const cors = require('cors')
 let app = express();
 
 app.use(express.json());
 app.use(cors());
 app.use(express.static('public'));
-app.use('/createNewAccount',createNewAccountRouter);
+app.use('/createNewAccount',userRouter);
 app.use('/login',loginRouter);
 
 app.get((req,res)=>{

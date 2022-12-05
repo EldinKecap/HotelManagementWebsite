@@ -13,7 +13,7 @@ function loginModel(loginInfo,getLoggedInUser) {
     })
     function login(bool,user){
         if (bool) {
-            conn.execute('UPDATE user SET logged_in = ?  WHERE id = ?',[user.id,true],(err,result,fields)=>{
+            conn.execute('UPDATE user SET logged_in = ?  WHERE id = ?',[1,user.id],(err,result,fields)=>{
                 user.logged_in = 1; 
                 user.success = true;
                 delete user.password;
@@ -24,7 +24,8 @@ function loginModel(loginInfo,getLoggedInUser) {
 }
 
 function logoutModel(user) {
-    conn.execute('UPDATE user SET logged_in = ?  WHERE id = ?',[user.id,false],
+    console.log(user);
+    conn.execute('UPDATE user SET logged_in = ?  WHERE id = ?',[0,user.id],
     (err,result,fields)=>{
         console.log(result);
     })
