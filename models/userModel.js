@@ -17,4 +17,8 @@ userModel.create = function (createAccountInformation,cb) {
     });
 }
 
+userModel.update = (updateAccountInformation,cb) => {
+    
+}
+
 module.exports = userModel;
