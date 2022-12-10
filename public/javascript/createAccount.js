@@ -12,7 +12,7 @@ submitCreateAccount.addEventListener('click',()=>{
     let createAccountInformation = checkUserInput(firstName,lastName,username,password,confirmPassword);
     console.log(createAccountInformation);
     if (Object.keys(createAccountInformation).length == 5 && checkPass(password,confirmPassword)) {
-        fetch('http://localhost:5000/createAccount',{method: "POST", 
+        fetch('http://localhost:5000/user/create',{method: "POST", 
         body: JSON.stringify({ createAccountInformation }),
         mode: 'cors',
         headers: {

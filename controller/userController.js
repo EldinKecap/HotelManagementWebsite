@@ -18,8 +18,9 @@ userController.create = ( req, res )=>{
     })
 }
 
-userController.update = ( req, res ) => {
-    let { userAccountInformation } = req.body; // Nije jos implementirano da salje sa front-enda
+userController.delete = ( req, res ) => {
+    console.log(req.body);
+    //let { userAccountInformation } = req.body; // Nije jos implementirano da salje sa front-enda
 }
 
 module.exports = userController;

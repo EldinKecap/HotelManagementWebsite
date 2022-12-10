@@ -19,25 +19,59 @@ try {
     let user = JSON.parse(localStorage.getItem('user'));
     if (user) {
         let loginIcon = document.getElementById('loginIcon');
-        loginIcon.id = 'logoutIcon';
-        loginIcon.innerHTML = 'Log out';
-        loginIcon.addEventListener('click',()=>{
-            fetch('http://localhost:5000/login/logout', {
-                method: "POST",
-                body: JSON.stringify({user}),
-                mode: 'cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).then((response) => {
-                return response.json();
-            }).then((data) => {
-            console.log(data);
-            localStorage.removeItem('user');
-            loginIcon.id = 'loginIcon';
-            loginIcon.innerHTML = "<a href='./login.html'>Log in</a>";
+        loginIcon.id = 'settingsIcon';
+        loginIcon.innerHTML = '<img src="../images/headerIcons/settings-512.png" alt="User Avatar">';
+        loginIcon.addEventListener('click',function showSettingsMenu(){
+            let settingsMenu = document.createElement('ul');
+            settingsMenu.id = 'settingsMenu';
+            let logOut = document.createElement('li');
+            logOut.id = 'logOutIcon';
+            logOut.innerText = 'Log out'
+            logOut.addEventListener('click',()=>{
+                fetch('http://localhost:5000/login/logout', {
+                    method: "POST",
+                    body: JSON.stringify({user}),
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then((response) => {
+                    return response.json();
+                }).then((data) => {
+                console.log("Response Json data: ", data);
+                localStorage.removeItem('user');
+                loginIcon.id = 'loginIcon';
+                loginIcon.innerHTML = "<a href='./login.html'>Log in</a>";
+                });
+            });
+            let updateProfile = document.createElement('li');
+            updateProfile.innerHTML = '<a href = "updateprofile.html" > Update profile </a>';
+            let deleteProfile = document.createElement('li');
+            deleteProfile.innerText = 'Delete profile';
+            deleteProfile.addEventListener('click',()=>{
+                fetch('http://localhost:5000/user/delete',{
+                    method: "DELETE",
+                    body: JSON.stringify({user}),
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
             })
-        })
+
+
+            settingsMenu.appendChild(logOut);
+            settingsMenu.appendChild(updateProfile);
+            settingsMenu.appendChild(deleteProfile);
+            loginIcon.appendChild(settingsMenu);
+            settingsMenu.addEventListener('mouseleave',()=>{
+                
+                loginIcon.removeChild(settingsMenu);
+                loginIcon.addEventListener('click',showSettingsMenu)
+
+            })
+            loginIcon.removeEventListener('click',showSettingsMenu)
+        });
     }
 } catch (error) {
     console.log("User not logged in");
