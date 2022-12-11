@@ -20,6 +20,7 @@ userController.create = ( req, res )=>{
 
 userController.delete = ( req, res ) => {
     console.log(req.body);
+    res.send({success: true})
     //let { userAccountInformation } = req.body; // Nije jos implementirano da salje sa front-enda
 }
 

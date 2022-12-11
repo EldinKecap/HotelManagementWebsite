@@ -1,3 +1,5 @@
+
+
 headerContainer.innerHTML = `<div class="headerBar">
 <div class="logo">
     <img class = "hotelIcon" src="./images/Hotel-icon.png" alt="hotelIcon">
@@ -39,9 +41,7 @@ try {
                     return response.json();
                 }).then((data) => {
                 console.log("Response Json data: ", data);
-                localStorage.removeItem('user');
-                loginIcon.id = 'loginIcon';
-                loginIcon.innerHTML = "<a href='./login.html'>Log in</a>";
+                logout();
                 });
             });
             let updateProfile = document.createElement('li');
@@ -56,9 +56,15 @@ try {
                     headers: {
                         'Content-Type': 'application/json'
                     }
-                });
+                }).then((response) => response.json())
+                .then((data)=> {
+                    if (data.success) {
+                        logout();
+                    }else{
+                        console.log('Failed to delete acc');
+                    }
+                })
             })
-
 
             settingsMenu.appendChild(logOut);
             settingsMenu.appendChild(updateProfile);
@@ -75,4 +81,11 @@ try {
     }
 } catch (error) {
     console.log("User not logged in");
+}
+
+function logout(){
+    let loginIcon = document.getElementById('settingsIcon');
+    localStorage.removeItem('user');
+    loginIcon.id = 'loginIcon';
+    loginIcon.innerHTML = "<a href='./login.html'>Log in</a>"
 }
