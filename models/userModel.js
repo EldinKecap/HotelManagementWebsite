@@ -19,7 +19,6 @@ userModel.create = function (createAccountInformation,cb) {
 
 userModel.delete = (deleteAccountInformation,cb) => {
     conn.execute('DELETE FROM user WHERE id = ?',[deleteAccountInformation.id],(err,res,field)=>{
-        console.log(res);
         cb(res);
     })
 }
