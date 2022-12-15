@@ -4,7 +4,7 @@ let userController = {};
 
 userController.create = ( req, res )=>{
     let { createAccountInformation } = req.body;
-    console.log( createAccountInformation );
+    // console.log( createAccountInformation );
     userModel.create( createAccountInformation, ( result )=>{
         if ( result ) {
         getUser( result, (user)=>{
@@ -19,7 +19,7 @@ userController.create = ( req, res )=>{
 }
 
 userController.delete = ( req, res ) => {
-    console.log(req.body);
+    // console.log(req.body);
     let { user } = req.body; // Nije jos implementirano da salje sa front-enda
     userModel.delete(user,(res)=>{
         console.log(res);
@@ -27,4 +27,7 @@ userController.delete = ( req, res ) => {
     res.send({success: true});
 }
 
+userController.update = (req,res) => {
+    console.log(req.body);
+}
 module.exports = userController;

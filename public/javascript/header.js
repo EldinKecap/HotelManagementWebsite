@@ -45,7 +45,7 @@ try {
                 });
             });
             let updateProfile = document.createElement('li');
-            updateProfile.innerHTML = '<a href = "updateprofile.html" > Update profile </a>';
+            updateProfile.innerHTML = '<a href = "updateProfile.html" > Update profile </a>';
             let deleteProfile = document.createElement('li');
             deleteProfile.innerText = 'Delete profile';
             deleteProfile.addEventListener('click',()=>{
