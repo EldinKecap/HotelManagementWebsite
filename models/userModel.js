@@ -2,27 +2,46 @@ const conn = require('./database');
 let userModel = {};
 
 userModel.create = function (createAccountInformation,cb) {
-    conn.execute('INSERT INTO customer(first_name,last_name) VALUES(?,?)',
-    [createAccountInformation.firstName,createAccountInformation.lastName],
-    (err,res,field)=>{
-        console.log(res);
-        conn.execute('INSERT INTO user(username,password,customer_id,logged_in) VALUES(?,?,?,?)',
-        [createAccountInformation.username,createAccountInformation.password,res.insertId,1],
+        conn.execute('INSERT INTO user(username,password,logged_in,first_name,last_name) VALUES(?,?,?,?,?)',
+        [createAccountInformation.username,createAccountInformation.password,createAccountInformation.firstName,createAccountInformation.lastName],
         (err,result,field)=>{
             console.log(result);
-            // console.log(field);
             cb(result);
-        })
-        // console.log(field);
-    });
+        });    
 }
 
-userModel.update = (updateAccountInformation,cb)=>{
+userModel.update = ( updateAccountInformation, id, cb )=>{
+    let fieldsToUpdate = '' ;
+    let valuesToUpdate = [...Object.values(updateAccountInformation)];
     
+    for ( const key in updateAccountInformation ) {
+        fieldsToUpdate += key + '= ? ,';
+        
+    }
+
+    fieldsToUpdate = fieldsToUpdate.replace( /,$/g, '');
+    valuesToUpdate.push(id);
+
+    conn.execute( 'UPDATE user SET ' + fieldsToUpdate + 'WHERE id = ?;', valuesToUpdate, (err, res, field) => {
+        cb(res)
+    } );
 }
 
-userModel.delete = (deleteAccountInformation,cb) => {
-    conn.execute('DELETE FROM user WHERE id = ?',[deleteAccountInformation.id],(err,res,field)=>{
+userModel.delete = ( deleteAccountInformation, cb ) => {
+    conn.execute( 'DELETE FROM user WHERE id = ?', [deleteAccountInformation.id], (err,res,field)=>{
+        cb(res);
+    } )
+}
+
+userModel.readAll = ( cb ) => {
+    conn.execute( 'SELECT * FROM user',(err,res,field) => {
+        cb(res);
+    })
+}
+
+userModel.readOne = ( id, cb ) => {
+    conn.execute( 'SELECT * FROM user WHERE id = ?', [id],(err,res,field) => {
+        console.log(res);
         cb(res);
     })
 }
