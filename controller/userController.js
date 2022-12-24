@@ -4,7 +4,6 @@ let userController = {};
 
 userController.create = ( req, res )=>{
     let { createAccountInformation } = req.body;
-    // console.log( createAccountInformation );
     userModel.create( createAccountInformation, ( result )=>{
         if ( result ) {
         getUser( result, ( user )=>{
@@ -19,8 +18,7 @@ userController.create = ( req, res )=>{
 }
 
 userController.delete = ( req, res ) => {
-    // console.log(req.body);
-    let { user } = req.body; // Nije jos implementirano da salje sa front-enda
+    let { user } = req.body; 
     userModel.delete( user, (res)=>{
         console.log(res);
     } )
