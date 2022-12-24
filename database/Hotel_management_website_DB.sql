@@ -44,34 +44,6 @@ INSERT INTO `admin` VALUES (1,'admin','12345678',0);
 UNLOCK TABLES;
 
 --
--- Table structure for table `customer`
---
-
-DROP TABLE IF EXISTS `customer`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `customer` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(45) DEFAULT NULL,
-  `last_name` varchar(45) DEFAULT NULL,
-  `gender` varchar(45) DEFAULT NULL,
-  `date_of_birth` date DEFAULT NULL,
-  `jmbg` varchar(25) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `jmbg` (`jmbg`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `customer`
---
-
-LOCK TABLES `customer` WRITE;
-/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `room`
 --
 
@@ -158,13 +130,15 @@ CREATE TABLE `user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
-  `customer_id` int DEFAULT NULL,
   `logged_in` tinyint(1) DEFAULT NULL,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `gender` varchar(1) DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `jmbg` varchar(13) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`),
-  KEY `User` (`customer_id`),
-  CONSTRAINT `user_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,6 +147,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (3,'ads','1234',NULL,'Eldin','Kecap',NULL,NULL,NULL),(13,'kecapeldin171234','1234',NULL,NULL,NULL,NULL,NULL,NULL),(20,'kecapeldin1712','1234',NULL,NULL,NULL,NULL,NULL,NULL),(21,'kecapeldin17123','1234',NULL,NULL,NULL,NULL,NULL,NULL),(22,'2314123421','1234',NULL,NULL,NULL,NULL,NULL,NULL),(23,'hafiz','1234',NULL,NULL,NULL,NULL,NULL,NULL),(24,'69','1234',0,NULL,NULL,NULL,NULL,NULL),(25,'asdf','1234',0,NULL,NULL,NULL,NULL,NULL),(26,'12344','1234',0,NULL,NULL,NULL,NULL,NULL),(27,'housos','1234',0,NULL,NULL,NULL,NULL,NULL),(28,'123456','1234',1,NULL,NULL,NULL,NULL,NULL),(29,'1234','1234',1,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -245,4 +220,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-06 10:12:32
+-- Dump completed on 2022-12-24 14:42:30
