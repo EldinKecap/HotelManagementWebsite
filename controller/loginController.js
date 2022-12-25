@@ -1,4 +1,4 @@
-const { loginModel,logoutModel } = require('../models/loginModel')
+const { loginModel, logoutModel } = require('../models/loginModel')
 
 module.exports = {
     post : (req,res)=>{
