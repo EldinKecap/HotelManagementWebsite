@@ -3,4 +3,6 @@ const router = express.Router();
 const roomController = require('../controller/roomController')
 
 
-router.get( '/room/all', roomController.readAll );
+router.get( '/readAll', roomController.readAll );
+
+module.exports = router;

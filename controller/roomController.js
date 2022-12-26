@@ -1,9 +1,11 @@
+const roomModel = require("../models/roomModel");
 
 let roomController = {};
 
-roomController.allRooms = ( req, res )=>{
-    
-
+roomController.readAll = ( req, res ) => {
+    roomModel.readAll( (result) => {
+        res.status(200).json(result);
+    } );
 }
 
 
