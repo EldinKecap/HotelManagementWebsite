@@ -10,8 +10,6 @@ module.exports = {
                 res.send({success : false, msg:"User is not in the database"});
             }
         });
-        console.log(loginInfo);
-        // res.send({status : 'Logged in'})
     },
     postLogout : (req,res)=>{
         let { user } = req.body;

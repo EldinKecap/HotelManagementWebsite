@@ -8,5 +8,11 @@ roomController.readAll = ( req, res ) => {
     } );
 }
 
+roomController.readOne = ( req, res ) => {
+    roomModel.readOne( req.params.id, ( result ) => {
+        res.status(200).json(result)
+    } )
+}
+
 
 module.exports = roomController;
