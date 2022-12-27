@@ -21,11 +21,12 @@ roomModel.create = function ( room, cb ){
        insertFields = key + ',';
     }
     
-    insertFields = insertFields.replace(/,$/g, '');
+    insertFields = insertFields.replace( /,$/g, '' );
 
     console.log(room);
     conn.execute('SELECT id FROM types_of_room WHERE type_of_room = ? ', [room.type], ( error, result, fields ) => {
-        console.log(result);
+        room.type = result[0].id
+        conn.execute('INSERT INTO room VALUES (?,?,?)', [Object.values(user)]) //Nastaviti ovdje
     })
 }
 
