@@ -16,15 +16,15 @@ roomModel.readOne = function ( id, cb ) {
 
 
 
-roomModel.create = function ( user, cb ){
-    for (const key in user) {
+roomModel.create = function ( room, cb ){
+    for (const key in room) {
        insertFields = key + ',';
     }
     
     insertFields = insertFields.replace(/,$/g, '');
 
-
-    conn.execute('SELECT id FROM roomType WHERE name = ? ', [user.type], ( error, result, fields ) => {
+    console.log(room);
+    conn.execute('SELECT id FROM types_of_room WHERE type_of_room = ? ', [room.type], ( error, result, fields ) => {
         console.log(result);
     })
 }
