@@ -15,8 +15,7 @@ userModel.update = ( updateAccountInformation, id, cb )=>{
     let valuesToUpdate = [...Object.values(updateAccountInformation)];
     
     for ( const key in updateAccountInformation ) {
-        fieldsToUpdate += key + '= ? ,';
-        
+        fieldsToUpdate += key + '= ? ,';     
     }
 
     fieldsToUpdate = fieldsToUpdate.replace( /,$/g, '');

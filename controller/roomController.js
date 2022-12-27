@@ -14,5 +14,8 @@ roomController.readOne = ( req, res ) => {
     } )
 }
 
+roomController.create = ( req, res ) => {
+    
+}
 
 module.exports = roomController;

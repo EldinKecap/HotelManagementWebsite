@@ -14,4 +14,19 @@ roomModel.readOne = function ( id, cb ) {
     } );
 }
 
+
+
+roomModel.create = function ( user, cb ){
+    for (const key in user) {
+       insertFields = key + ',';
+    }
+    
+    insertFields = insertFields.replace(/,$/g, '');
+
+
+    conn.execute('SELECT id FROM roomType WHERE name = ? ', [user.type], ( error, result, fields ) => {
+        console.log(result);
+    })
+}
+
 module.exports = roomModel;
