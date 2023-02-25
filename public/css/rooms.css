@@ -1,7 +1,8 @@
 body{
+    background: top center no-repeat;
     background-image:linear-gradient( rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.3)), url('../roomImages/background/pexels-pixabay-462024.jpg');
     background-size: cover;
-    background-position: center;
+    background-attachment: fixed;
     padding: 0%;
     margin: 0%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

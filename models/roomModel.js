@@ -26,7 +26,7 @@ roomModel.create = function ( room, cb ){
     console.log(room);
     conn.execute('SELECT id FROM types_of_room WHERE type_of_room = ? ', [room.type], ( error, result, fields ) => {
         room.type = result[0].id
-        conn.execute('INSERT INTO room VALUES (?,?,?)', [Object.values(user)]) //Nastaviti ovdje
+        //!!!!!!!!!!!! conn.execute('INSERT INTO room VALUES (?,?,?)', [Object.values(user)]) //Nastaviti ovdje
     })
 }
 
