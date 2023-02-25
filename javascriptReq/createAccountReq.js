@@ -23,12 +23,6 @@ app.post('/createAccount',(req,res)=>{
 })
 
 
-// conn.connect(function(err){
-//     if (err) {
-//         throw err;
-//     }
-//     console.log('connected');
-// })
 
 
     app.listen(5000,()=>{

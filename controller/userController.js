@@ -4,6 +4,7 @@ let userController = {};
 
 userController.create = ( req, res )=>{
     let { createAccountInformation } = req.body;
+    
     userModel.create( createAccountInformation, ( result )=>{
         if ( result ) {
         getUser( result, ( user )=>{
@@ -26,6 +27,7 @@ userController.delete = ( req, res ) => {
 }
 
 userController.update = ( req, res ) => {
+    console.log(req.body);
     if(Object.keys(req.body).length > 0){
         userModel.update( req.body, req.params.id, (res)=>{
             console.log(res);

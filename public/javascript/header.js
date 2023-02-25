@@ -23,16 +23,16 @@ try {
         let loginIcon = document.getElementById('loginIcon');
         loginIcon.id = 'settingsIcon';
         loginIcon.innerHTML = '<img src="../images/headerIcons/settings-512.png" alt="User Avatar">';
-        loginIcon.addEventListener('click',function showSettingsMenu(){
+        loginIcon.addEventListener('click', function showSettingsMenu() {
             let settingsMenu = document.createElement('ul');
             settingsMenu.id = 'settingsMenu';
             let logOut = document.createElement('li');
             logOut.id = 'logOutIcon';
             logOut.innerText = 'Log out'
-            logOut.addEventListener('click',()=>{
+            logOut.addEventListener('click', () => {
                 fetch('http://localhost:5000/login/logout', {
                     method: "POST",
-                    body: JSON.stringify({user}),
+                    body: JSON.stringify({ user }),
                     mode: 'cors',
                     headers: {
                         'Content-Type': 'application/json'
@@ -40,52 +40,53 @@ try {
                 }).then((response) => {
                     return response.json();
                 }).then((data) => {
-                console.log("Response Json data: ", data);
-                logout();
+                    console.log("Response Json data: ", data);
+                    logout();
                 });
             });
             let updateProfile = document.createElement('li');
             updateProfile.innerHTML = '<a href = "updateProfile.html" > Update profile </a>';
             let deleteProfile = document.createElement('li');
             deleteProfile.innerText = 'Delete profile';
-            deleteProfile.addEventListener('click',()=>{
-                fetch('http://localhost:5000/user/delete',{
+            deleteProfile.addEventListener('click', () => {
+                fetch('http://localhost:5000/user/delete', {
                     method: "DELETE",
-                    body: JSON.stringify({user}),
+                    body: JSON.stringify({ user }),
                     mode: 'cors',
                     headers: {
                         'Content-Type': 'application/json'
                     }
                 }).then((response) => response.json())
-                .then((data)=> {
-                    if (data.success) {
-                        logout();
-                    }else{
-                        console.log('Failed to delete acc');
-                    }
-                })
+                    .then((data) => {
+                        if (data.success) {
+                            logout();
+                        } else {
+                            console.log('Failed to delete acc');
+                        }
+                    })
             })
 
             settingsMenu.appendChild(logOut);
             settingsMenu.appendChild(updateProfile);
             settingsMenu.appendChild(deleteProfile);
             loginIcon.appendChild(settingsMenu);
-            settingsMenu.addEventListener('mouseleave',()=>{
-                
+            settingsMenu.addEventListener('mouseleave', () => {
+
                 loginIcon.removeChild(settingsMenu);
-                loginIcon.addEventListener('click',showSettingsMenu)
+                loginIcon.addEventListener('click', showSettingsMenu)
 
             })
-            loginIcon.removeEventListener('click',showSettingsMenu)
+            loginIcon.removeEventListener('click', showSettingsMenu)
         });
     }
 } catch (error) {
     console.log("User not logged in");
 }
 
-function logout(){
+function logout() {
     let loginIcon = document.getElementById('settingsIcon');
     localStorage.removeItem('user');
     loginIcon.id = 'loginIcon';
     loginIcon.innerHTML = "<a href='./login.html'>Log in</a>"
+    window.location.href = "http://localhost:5000/index.html";
 }
