@@ -32,6 +32,7 @@ fetch('http://localhost:5000/room/readAll/', {
     data.forEach(element => {
         roomsContainer.appendChild(Room(element.room_number,
             element.description,
-            element.image));
+            // element.image  //////IMPLEMENT UPLOADING IMAGES
+            './roomImages/room3.jpg'));
     });
 })

@@ -71,18 +71,24 @@ body{
     border-radius: 10px;
   }
   
-.rooms {
+.roomsContainerGrid {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3%;
     background-color: rgba(240, 248, 255, 0.165);
     width: 95%;
     border-radius: 20px;
     height: 80vh;
     margin-top: 10px;
+    overflow-y: scroll;
 }
 
-.roomContainer {
-    width: 45%;
-    margin: 3%;
+
+.roomsCard {
+    text-align: justify;
+    width: 200px;
+    margin-top: 10px;
     background-color: rgba(0, 0, 0, 0.104);
     backdrop-filter: blur(14px);
     border-radius: 20px;
@@ -90,24 +96,24 @@ body{
     overflow:hidden;
 }
 
-.roomContainer > img{
+.roomsCard > img{
     width:100%;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     height: 50%;
 }
 
-.roomDescription{
+.roomsDescription{
     font-size: 11px;
     text-align: justify;
-    padding: 5%;
+    padding: 5px;
 }
 
 .roomDescription > h1{
     margin-top: 0px;
 }
 
-.roomContainer > p{
+.roomsCard > p{
     margin-top: -10px;
 }
 

@@ -90,3 +90,19 @@ function logout() {
     loginIcon.innerHTML = "<a href='./login.html'>Log in</a>"
     window.location.href = "http://localhost:5000/index.html";
 }
+
+try {  
+    if (JSON.parse(localStorage.getItem('user')).admin) {
+            let navList = document.querySelector('.navList');
+            let adminPanelNav = document.createElement('li');
+            let adminPanelNavLink = document.createElement('a');
+            adminPanelNavLink.setAttribute('href', './admin.html');
+            adminPanelNavLink.innerText = 'Admin';
+            adminPanelNav.appendChild(adminPanelNavLink);
+            adminPanelNav.className = 'navListItem';
+            navList.removeChild(navList.children[1]);
+            navList.prepend(adminPanelNav);
+        }
+} catch (error) {
+    console.log('user not logged in');
+}
