@@ -1,0 +1,73 @@
+body {
+  background: no-repeat bottom;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url("../images/couldbeused3.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.formContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  padding: 5px;
+  backdrop-filter: blur(14px);
+  align-items: center;
+  border-radius: 15px;
+}
+
+input,
+textarea,
+select {
+  width: 50%;
+  color: white;
+  font-size: 20px;
+  resize: none;
+  background-color: #0000009a;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+label {
+  background-color: rgba(0, 0, 0, 0.607);
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+
+}
+
+label:hover {
+  background-color: rgba(0, 0, 0, 0.786);
+}
+
+select {
+  padding: 0%;
+  margin: 0%;
+  width: 30%;
+  text-align: center;
+}
+
+button {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 20px;
+  background-color: #799B97;
+  color: white;
+  font-size: 20px;
+
+}
+
+button:hover {
+  background-color: #26423e;
+}
