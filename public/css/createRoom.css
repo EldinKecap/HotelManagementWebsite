@@ -11,6 +11,7 @@ body {
   display: flex;
   justify-content: center;
   color: white;
+
 }
 
 form {
@@ -22,6 +23,8 @@ form {
   backdrop-filter: blur(14px);
   align-items: center;
   border-radius: 15px;
+box-shadow: inset rgba(255, 255, 255, 0.531) 0px 0px 40px;
+
 }
 
 input,
@@ -62,13 +65,13 @@ button {
   border-radius: 10px;
   border: none;
   margin-bottom: 20px;
-  background-color: #799B97;
+  background-color: #00bfa9a4;
   color: white;
   font-size: 20px;
 
 }
 
 button:hover {
-  background-color: #26423e;
+  background-color: #015246c9;
 }
 
