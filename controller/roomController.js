@@ -15,7 +15,11 @@ roomController.readOne = (req, res) => {
 }
 
 roomController.create = (req, res) => {
+    // console.log(req.body);
+    // console.log(req.body.roomNumber);
+    console.log('--------------------');
     roomModel.create(req.body, () => { })
+    res.send('yo')
 }
 
 roomController.getRoomTypes = (req, res) => {

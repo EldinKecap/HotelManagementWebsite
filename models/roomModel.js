@@ -17,15 +17,17 @@ roomModel.readOne = function (id, cb) {
 
 
 roomModel.create = function (room, cb) {
-    for (const key in room) {
-        insertFields = key + ',';
-    }
+    // console.log(room);
+  
+    // for (const key in room) {
+    //     insertFields = key + ',';
+    // }
 
-    insertFields = insertFields.replace(/,$/g, '');
+    // insertFields = insertFields.replace(/,$/g, '');
 
-    console.log(room);
+    // console.log(room);
 
-    conn.execute('INSERT INTO room (room_number, types_of_room_id, image, description) VALUES (?,?,?,?)', []) //Nastaviti ovdje
+    // conn.execute('INSERT INTO room (room_number, types_of_room_id, image, description) VALUES (?,?,?,?)', []) //Nastaviti ovdje
 }
 
 roomModel.getRoomTypes = function (cb) {

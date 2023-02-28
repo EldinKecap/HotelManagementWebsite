@@ -15,11 +15,11 @@
     <div id="headerContainer">
     </div>
     <div class="formContainer">
-        <form>
+        <form id="createRoomForm" method="post" action="/room/create" enctype="multipart/form-data">
             <h1>Create Room</h1>
-            <input type="number" name="roomNumber" placeholder="Enter room number">
-            <textarea name="descripiton" cols="10" rows="5" placeholder="Enter Description"></textarea>
-            <select name="type" id="roomTypeSelect"></select>
+            <input id="name"  type="number" name="roomNumber" placeholder="Enter room number">
+            <textarea id="description" name="descripiton" cols="10" rows="5" placeholder="Enter Description"></textarea>
+            <select id="roomTypeSelect" name="type" ></select>
             <label for="imageUpload">Upload an image</label>
             <input id="imageUpload" type="file" name="image" accept="image/*" multiple hidden>
             <button type="submit">Create</button>
