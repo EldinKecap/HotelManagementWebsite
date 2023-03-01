@@ -17,13 +17,16 @@ roomController.readOne = (req, res) => {
 roomController.create = (req, res) => {
     // console.log(req.body);
     // console.log(req.body.roomNumber);
-    console.log('--------------------');
-    roomModel.create(req.body, () => { })
-    res.send('yo')
+    // console.log('--------------------');
+    roomModel.create(req.body, (result) => {
+        if (result) {
+            res.json({ msg: 'success' });
+        }
+    })
 }
 
 roomController.getRoomTypes = (req, res) => {
-    roomModel.getRoomTypes((result)=>{
+    roomModel.getRoomTypes((result) => {
         res.status(200).json(result)
     })
 }

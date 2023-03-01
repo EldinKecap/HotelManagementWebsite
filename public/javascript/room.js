@@ -28,11 +28,11 @@ fetch('http://localhost:5000/room/readAll/', {
     return res.json();
 }).then((data) => {
     let roomsContainer = document.querySelector('.roomsContainerGrid');
-    console.log(roomsContainer);
     data.forEach(element => {
         roomsContainer.appendChild(Room(element.room_number,
             element.description,
-            // element.image  //////IMPLEMENT UPLOADING IMAGES
-            './roomImages/room3.jpg'));
+            element.image  
+            ));
+            console.log(element);
     });
 })
