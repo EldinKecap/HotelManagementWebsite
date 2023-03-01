@@ -17,18 +17,26 @@ const storage = multer.diskStorage({
 
 })
 
-const upload = multer({
+let upload = multer({
     storage: storage,
     fileFilter: (req, file, cb) => {
-        roomModel.readOneByRoomNumber(req.body.roomNumber, (result) => {
-            if (result.length > 0) {
-                cb(null, false)
-            } else {
-                cb(null, true)
-            }
-        })
+        // console.log(req.body);
+        // if (req.body.update) {
+        //     console.log('yo');
+        // }else{
+            // console.log('oy');
+            roomModel.readOneByRoomNumber(req.body.roomNumber, (result) => {
+                if (result.length > 0) {
+                    cb(null, false)
+                } else {
+                    cb(null, true)
+                }
+            })
+        // }
     }
 })
+
+
 
 
 router.get('/readAll', roomController.readAll);
@@ -38,4 +46,10 @@ router.post('/create',
     upload.single('image'),
     roomController.create);
 
+
+
+router.put('/update',
+    // upload.single('image'),
+    roomController.update);
+///////TRY EXPRESS-FILEUPLOAD FOR MULTIPLE ENDPOINTS UPLOAD
 module.exports = router;

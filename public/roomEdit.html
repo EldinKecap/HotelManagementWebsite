@@ -14,7 +14,7 @@
     <div id="headerContainer">
     </div>
     <div class="formContainer">
-        <form id="updateRoomForm" method="post" enctype="multipart/form-data">
+        <form id="updateRoomForm" method="put" enctype="multipart/form-data">
             <h1 id="roomToUpdate">Update Room</h1>
             <textarea id="description" name="description" cols="10" rows="5" placeholder="Enter Description" ></textarea>
             <select id="roomTypeSelect" name="roomTypeId" ></select>
@@ -22,6 +22,7 @@
             <input id="imageUpload" type="file" name="image" accept="image/*" multiple hidden >
             <button type="submit" id="submit">Update</button>
         </form>
+        <button>Delete</button>
     </div>
 </body>
 </html>

@@ -29,6 +29,13 @@ roomController.create = (req, res) => {
     })
 }
 
+roomController.update = (req, res) => {
+    console.log(req.body);
+    console.log(req.file);
+    res.send({msg:'success'});
+}
+
+
 roomController.getRoomTypes = (req, res) => {
     roomModel.getRoomTypes((result) => {
         res.status(200).json(result)

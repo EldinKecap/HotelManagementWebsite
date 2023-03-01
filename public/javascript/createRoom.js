@@ -20,12 +20,12 @@ function getAllRoomTypes() {
 
 getAllRoomTypes();
 
-let uploadFile = document.getElementById('imageUpload');
-uploadFile.addEventListener('change', () => {
-    let selected = [...uploadFile.files]
+// let uploadFile = document.getElementById('imageUpload');
+// uploadFile.addEventListener('change', () => {
+//     let selected = [...uploadFile.files]
 
-    console.log(selected);
-})
+//     console.log(selected);
+// })
 
 let form = document.getElementById('createRoomForm');
 form.addEventListener('submit', (e) => {
