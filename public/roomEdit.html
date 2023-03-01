@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head id="titleContainer">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/createRoom.css">
     <script defer src="./javascript/header.js"></script>
-    <script defer src="./javascript/createRoom.js"></script>
+    <script defer src="./javascript/roomEdit.js"></script>
+    <link rel="stylesheet" href="./css/roomEdit.css">
+    <link rel="stylesheet" href="./css/header.css">
+    
 </head>
-
 <body>
     <div id="headerContainer">
     </div>
     <div class="formContainer">
-        <form id="createRoomForm" method="post" enctype="multipart/form-data">
-            <h1 id="formTitle">Create Room</h1>
-            <input id="name"  type="number" name="roomNumber" placeholder="Enter room number" >
+        <form id="updateRoomForm" method="post" enctype="multipart/form-data">
+            <h1 id="roomToUpdate">Update Room</h1>
             <textarea id="description" name="description" cols="10" rows="5" placeholder="Enter Description" ></textarea>
             <select id="roomTypeSelect" name="roomTypeId" ></select>
             <label for="imageUpload">Upload an image</label>
             <input id="imageUpload" type="file" name="image" accept="image/*" multiple hidden >
-            <button type="submit" id="submit">Create</button>
+            <button type="submit" id="submit">Update</button>
         </form>
     </div>
 </body>
-
 </html>

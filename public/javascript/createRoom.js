@@ -53,7 +53,12 @@ form.addEventListener('submit', (e) => {
         return res.json();
     }).then(data => {
         console.log(data);
+        if (data.msg == 'success') {
+            window.location.href = 'http://localhost:5000/admin.html';
+        }else{
+            let formTitle = document.getElementById('formTitle');
+            formTitle.innerText = 'Room already exists';
+        }
     })
-
 
 })

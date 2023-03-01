@@ -18,9 +18,13 @@ roomController.create = (req, res) => {
     // console.log(req.body);
     // console.log(req.body.roomNumber);
     // console.log('--------------------');
-    roomModel.create(req.body, (result) => {
-        if (result) {
-            res.json({ msg: 'success' });
+    roomModel.readOneByRoomNumber(req.body.roomNumber, (result) => {
+        if (result.length > 0) {
+            res.json({ msg: "already exists" })
+        } else {
+            roomModel.create(req.body, (result) => {
+                res.json({ msg: 'success', result });
+            })
         }
     })
 }

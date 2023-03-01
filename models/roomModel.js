@@ -13,6 +13,11 @@ roomModel.readOne = function (id, cb) {
         cb(result);
     });
 }
+roomModel.readOneByRoomNumber = function (roomNumber, cb) {
+    conn.execute('SELECT * FROM room WHERE room_number = ?', [roomNumber], (error, result, fields) => {
+        cb(result);
+    });
+}
 
 
 

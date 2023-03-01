@@ -1,135 +1,140 @@
-body{
-    background-image:linear-gradient( rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.3)), url('../roomImages/background/pexels-fabian-wiktor-994605.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    padding: 0%;
-    margin: 0%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url("../roomImages/background/pexels-fabian-wiktor-994605.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding: 0%;
+  margin: 0%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .gridContainer {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: 1fr 3fr minmax(250px,1fr);
-    /* background: #000; */
-    color: white;
-    justify-items: center;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) 5fr;
+  /* background: #000; */
+  color: white;
+  justify-items: center;
 }
 
-.customers{
-    height: 80vh;
-    background:linear-gradient(rgba(255, 255, 255, 0.165), rgba(255, 255, 255, 0.124));
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    margin: 10px;
-    overflow-y: scroll;
+.customers {
+  height: 80vh;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.165),
+    rgba(255, 255, 255, 0.124)
+  );
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 10px;
+  overflow-y: scroll;
 }
 
-.customerCard{
-    display: flex;
-    padding: 0.5rem;
-    background-color: rgba(240, 248, 255, 0.165);
-    backdrop-filter: blur(14px);
-    border-radius: 50px;
-    margin-bottom: 10px;
+.customerCard {
+  display: flex;
+  padding: 0.5rem;
+  background-color: rgba(240, 248, 255, 0.165);
+  backdrop-filter: blur(14px);
+  border-radius: 50px;
+  margin-bottom: 10px;
 }
 
-.customerInfo{
-    margin-left: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-right: 0.5rem;
+.customerInfo {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-right: 0.5rem;
 }
 
-.customerCard > img{
-    border-radius: 50%;
-    width: 50px;
-    border: solid white 1px;
+.customerCard > img {
+  border-radius: 50%;
+  width: 50px;
+  border: solid white 1px;
 }
-
 
 ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-::-webkit-scrollbar-track-piece{
-    background-color: white;
-    border-radius: 10px;
-  }
-  
-::-webkit-scrollbar-thumb{
-    background-color: lightgray;
-    border-radius: 10px;
-  }
-  
-.roomsContainerGrid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3%;
-    background-color: rgba(240, 248, 255, 0.165);
-    width: 95%;
-    border-radius: 20px;
-    height: 80vh;
-    margin-top: 10px;
-    overflow-y: scroll;
+  width: 10px;
 }
 
+::-webkit-scrollbar-track-piece {
+  background-color: white;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+  border-radius: 10px;
+}
+
+.roomsContainerGrid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 10px;
+  justify-content: flex-start;
+  background-color: rgba(240, 248, 255, 0.165);
+  width: 95%;
+  border-radius: 20px;
+  height: fit-content;
+  margin-top: 10px;
+  overflow-y: scroll;
+}
 
 .roomsCard {
-    text-align: justify;
-    width: 200px;
-    margin-top: 10px;
-    background-color: rgba(0, 0, 0, 0.104);
-    backdrop-filter: blur(14px);
-    border-radius: 20px;
-    height: 330px;
-    overflow:hidden;
+  text-align: justify;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.104);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  height: 330px;
+  overflow: hidden;
 }
 
-.roomsCard > img{
-    width:100%;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    height: 50%;
+.roomsCard > img {
+  width: 100%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  height: 50%;
 }
 
-.roomsDescription{
-    font-size: 11px;
-    text-align: justify;
-    padding: 5px;
+.roomsDescription {
+  font-size: 11px;
+  text-align: justify;
+  padding: 5px;
 }
 
-.roomsCard h3{
-    padding: 5px ;
+.roomsCard h3 {
+  padding: 5px;
 }
 
-.roomsCard > p{
-    margin-top: -10px;
+.roomsCard > p {
+  margin-top: -10px;
 }
 
-.adminMenu{
-    background-color: rgba(240, 248, 255, 0.165);
-    margin-top: 10px;
-    border-radius: 20px;
-    text-align: center;
-    width: 95%;
-    height: 80vh ;
+
+
+.adminMenu {
+  background-color: rgba(240, 248, 255, 0.165);
+  margin-top: 10px;
+  border-radius: 20px;
+  text-align: center;
+  width: 95%;
+  height: 80vh;
 }
 
-li{
-    list-style-type: none;
+li {
+  list-style-type: none;
 }
 
-ul{
-    padding: 0px;
+ul {
+  padding: 0px;
 }
