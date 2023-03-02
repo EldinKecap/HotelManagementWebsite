@@ -29,7 +29,6 @@ form.addEventListener('submit', (e) => {
     e.preventDefault()
     let formData = new FormData(form);
     formData.append('roomNumber', roomNumber)
-    formData.append('update', true)
 
     fetch('http://localhost:5000/room/update', {
         method: 'PUT',
@@ -41,7 +40,6 @@ form.addEventListener('submit', (e) => {
         console.log(data);
         if (data.msg == 'success') {
             // window.location.href = 'http://localhost:5000/admin.html';
-            console.log('stigo');
         } else {
             let formTitle = document.getElementById('formTitle');
             formTitle.innerText = 'Room already exists';
@@ -49,4 +47,3 @@ form.addEventListener('submit', (e) => {
     })
 })
 
-//////////////// Nastavit sa update functionality
