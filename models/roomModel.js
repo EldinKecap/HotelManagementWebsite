@@ -1,5 +1,5 @@
 const conn = require('./database');
-
+const fs = require('fs');
 let roomModel = {};
 
 roomModel.readAll = function (cb) {
@@ -49,7 +49,7 @@ roomModel.update = function (room, cb) {
     valuesToUpdate.push(Number(room.roomNumber));
     valuesToUpdate = valuesToUpdate.filter((a) => a)
     // console.log(valuesToUpdate);
-    console.log('UPDATE room SET ' + fieldsToUpdate + ' WHERE room_number = ?;',valuesToUpdate);
+    console.log('UPDATE room SET ' + fieldsToUpdate + ' WHERE room_number = ?;', valuesToUpdate);
     conn.execute('UPDATE room SET ' + fieldsToUpdate + ' WHERE room_number = ?;',
         valuesToUpdate, (error, result) => {
             if (result) {
@@ -60,6 +60,17 @@ roomModel.update = function (room, cb) {
             }
         })
 };
+
+roomModel.delete = function (roomNumber, cb) {
+    conn.execute('DELETE FROM room WHERE room_number = ?', [roomNumber], (error, result, fields) => {
+        try {
+            fs.rmSync('./public/roomImages/' + roomNumber + '.jpg')
+        } catch (error) {
+            console.log(error);
+        }
+        cb(result);
+    })
+}
 
 roomModel.getRoomTypes = function (cb) {
     conn.execute('SELECT * FROM types_of_room', (error, result, fields) => {

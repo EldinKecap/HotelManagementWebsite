@@ -67,6 +67,12 @@ roomController.update = (req, res) => {
     })
 }
 
+roomController.delete = function (req, res) {
+    // console.log(req.params);
+    roomModel.delete(req.params.roomNumber, (result) => {
+        res.json({ msg: 'success', result })
+    })
+}
 
 roomController.getRoomTypes = (req, res) => {
     roomModel.getRoomTypes((result) => {

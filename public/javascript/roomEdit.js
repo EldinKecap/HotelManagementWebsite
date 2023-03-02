@@ -39,10 +39,28 @@ form.addEventListener('submit', (e) => {
     }).then(data => {
         console.log(data);
         if (data.msg == 'success') {
-            // window.location.href = 'http://localhost:5000/admin.html';
+            window.location.href = 'http://localhost:5000/admin.html';
         } else {
             let formTitle = document.getElementById('formTitle');
             formTitle.innerText = 'Room already exists';
+        }
+    })
+})
+
+let deleteBtn = document.getElementById('delete');
+deleteBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    fetch('http://localhost:5000/room/delete/' + roomNumber, {
+        method: 'DELETE',
+        mode: 'cors'
+    }).then(res => {
+        return res.json();
+    }).then(data => {
+        console.log(data);
+        if (data.msg == 'success') {
+            window.location.href = 'http://localhost:5000/admin.html';
+        } else {
+            console.log('SERVER ERROR');
         }
     })
 })
