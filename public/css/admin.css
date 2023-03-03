@@ -11,16 +11,15 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.gridContainer {
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: minmax(100px, 1fr) 5fr;
-  /* background: #000; */
+.flexContainer {
+  display: flex;
+  flex-direction: column;
   color: white;
   justify-items: center;
+  padding: 20px;
 }
 
-.customers {
+/* .customers {
   height: 80vh;
   background: linear-gradient(
     rgba(255, 255, 255, 0.165),
@@ -36,15 +35,15 @@ body {
   border-bottom-right-radius: 5px;
   margin: 10px;
   overflow-y: scroll;
-}
+} */
 
 .customerCard {
   display: flex;
   padding: 0.5rem;
-  background-color: rgba(240, 248, 255, 0.165);
+  background-color: rgba(3, 23, 41, 0.368);
   backdrop-filter: blur(14px);
   border-radius: 50px;
-  margin-bottom: 10px;
+  margin: 10px;
 }
 
 .customerInfo {
@@ -61,7 +60,7 @@ body {
   border: solid white 1px;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 10px;
 }
 
@@ -73,30 +72,32 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: lightgray;
   border-radius: 10px;
-}
+} */
 
 .roomsContainerGrid {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  justify-content: flex-start;
+  justify-items: center;
   background-color: rgba(240, 248, 255, 0.165);
-  width: 95%;
+  width: 100%;
   border-radius: 20px;
   height: fit-content;
   margin-top: 10px;
-  overflow-y: scroll;
+  box-shadow: inset 0px 0px 20px rgb(255, 255, 255);
+  /* overflow-y: scroll; */
 }
 
 .roomsCard {
   text-align: justify;
+  border: solid 1px;
   width: 200px;
   background-color: rgba(0, 0, 0, 0.104);
   backdrop-filter: blur(14px);
   border-radius: 20px;
   height: 330px;
   overflow: hidden;
+  margin: 20px;
 }
 
 .roomsCard > img {
@@ -121,15 +122,13 @@ body {
   margin-top: -10px;
 }
 
-
-
 .adminMenu {
   background-color: rgba(240, 248, 255, 0.165);
-  margin-top: 10px;
   border-radius: 20px;
   text-align: center;
-  width: 95%;
-  height: 80vh;
+  width: 100%;
+  height: fit-content;
+  color: white;
 }
 
 li {
@@ -138,4 +137,37 @@ li {
 
 ul {
   padding: 0px;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+.active {
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .roomsContainerGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.roomsContainerGrid > .customerCard {
+  justify-self: stretch;
+}
+
+@media (max-width: 800px) {
+  .roomsContainerGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .roomsContainerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  ul {
+    flex-direction: column;
+  }
 }
