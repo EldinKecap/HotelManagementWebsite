@@ -1,10 +1,13 @@
 const checkInModel = require("../models/checkInModel");
 
 
-let checkInController;
+let checkInController = {};
 
 checkInController.readAll = (req, res) => {
-    checkInModel.readAll();
+    checkInModel.readAll((result)=>{
+        console.log(result);
+        res.json(result);
+    });
 }
 
 module.exports = checkInController;
