@@ -4,3 +4,6 @@ const router = express.Router();
 
 
 router.get('/readAll', checkInController.readAll);
+router.post('/create', checkInController.create);
+
+module.exports = router;

@@ -24,6 +24,42 @@ async function getAllRooms() {
     });
 }
 
-getAllUsers();
+let checkInForm = document.getElementById('checkInForm');
 
+function getFormData() {
+    // console.log('yo');
+    let roomSelect = document.getElementById('roomNumber');
+    let userSelect = document.getElementById('username');
+    currentDate = new Date();
+    // console.log(currentDate);
+    let month = +currentDate.getMonth() + 1;
+    let date = currentDate.getFullYear() + '-' + month + '-' + currentDate.getDate();
+
+    let formData = {
+        user_id: userSelect.value,
+        room_id: roomSelect.value,
+        time_of_arrival: date
+    };
+    return formData;
+    // console.log(new Date(date));
+    // console.log(formData);
+}
+checkInForm.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    let formData = getFormData()
+    let response = await fetch('http://localhost:5000/checkIn/create', {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    let data = await response.json();
+    console.log(data);
+});
+getAllUsers();
 getAllRooms();
+
+
+

@@ -9,22 +9,22 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/checkIn.css">
     <script defer src="./javascript/header.js"></script>
-    <script src="./javascript/checkIn.js"></script>
+    <script defer src="./javascript/checkIn.js"></script>
 </head>
 
 
 <body>
     <div id="headerContainer"></div>
     <div class="formContainer">
-        <form>
+        <form id="checkInForm">
             <h1>Check in</h1>
             <select name="roomId" id="roomNumber" aria-placeholder="Select Room Number">
-                
+
             </select>
             <select name="userId" id="username" aria-placeholder="Select Username">
 
             </select>
-            <button>Check In</button>
+            <button type="submit" id="submitButton">Check In</button>
         </form>
     </div>
 </body>

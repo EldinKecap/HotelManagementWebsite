@@ -4,8 +4,8 @@ const loginRouter = require('./routes/loginRouter');
 const roomRouter = require('./routes/roomRouter')
 const cors = require('cors')
 const upload = require('express-fileupload');
+const checkInRouter = require('./routes/checkInRouter');
 const app = express();
-
 
 
 app.use(cors());
@@ -16,6 +16,7 @@ app.use(express.static('public'));
 app.use('/user', userRouter);
 app.use('/login', loginRouter);
 app.use('/room', roomRouter);
+app.use('/checkin', checkInRouter);
 
 app.get((req, res) => {
     res.sendFile('/index.html');
