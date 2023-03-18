@@ -57,6 +57,11 @@ checkInForm.addEventListener('submit', async (e) => {
 
     let data = await response.json();
     console.log(data);
+    if (data.hasOwnProperty('error')) {
+        document.getElementById('error').innerText = data.error;
+    }else{
+        document.getElementById('error').innerText = 'User Checked In';
+    }
 });
 getAllUsers();
 getAllRooms();

@@ -139,16 +139,17 @@ DROP TABLE IF EXISTS `user_room`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_room` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `room_id` int DEFAULT NULL,
-  `user_id` int DEFAULT NULL,
+  `room_id` int NOT NULL,
+  `user_id` int NOT NULL,
   `time_of_arrival` date DEFAULT NULL,
   `paid` tinyint(1) DEFAULT NULL,
+  `occupied` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `room_id` (`room_id`),
-  KEY `User_room` (`user_id`),
+  KEY `user_room_ibfk_1` (`user_id`),
+  KEY `user_room_ibfk_2` (`room_id`),
   CONSTRAINT `user_room_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   CONSTRAINT `user_room_ibfk_2` FOREIGN KEY (`room_id`) REFERENCES `room` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -157,6 +158,7 @@ CREATE TABLE `user_room` (
 
 LOCK TABLES `user_room` WRITE;
 /*!40000 ALTER TABLE `user_room` DISABLE KEYS */;
+INSERT INTO `user_room` VALUES (24,28,3,'2023-03-18',0,1),(25,28,3,'2023-03-18',0,1),(26,29,13,'2023-03-18',0,1),(27,32,3,'2023-03-18',0,1),(28,37,25,'2023-03-18',0,1);
 /*!40000 ALTER TABLE `user_room` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,4 +201,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-11 11:51:41
+-- Dump completed on 2023-03-18 20:02:52

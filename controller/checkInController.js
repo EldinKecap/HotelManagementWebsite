@@ -12,6 +12,11 @@ checkInController.readAll = (req, res) => {
 
 checkInController.create = (req, res) => {
     checkInModel.create(req.body, (result) => {
+        if (result.hasOwnProperty('error')) {
+            res.json({ 'msg': 'Error', error : result.error });console.log('error');
+            return
+        }
+        console.log('whaa');
         res.json({ 'msg': 'Success', result })
     });
 }
