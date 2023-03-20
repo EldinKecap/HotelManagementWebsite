@@ -31,6 +31,11 @@ checkInModel.create = (checkInData, cb) => {
 
 }
 
+
+checkInModel.checkOut = (checkOutData, cb) => {
+
+}
+
 function checkIfRoomIsOccupied(roomId, cb) {
     let sql = "SELECT * FROM user_room WHERE room_id = ?;"
     let occupied = false;

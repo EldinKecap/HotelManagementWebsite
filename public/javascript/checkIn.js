@@ -63,6 +63,7 @@ checkInForm.addEventListener('submit', async (e) => {
         document.getElementById('error').innerText = 'User Checked In';
     }
 });
+
 getAllUsers();
 getAllRooms();
 
