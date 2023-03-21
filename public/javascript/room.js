@@ -33,6 +33,6 @@ fetch('http://localhost:5000/room/readAll/', {
             element.description,
             element.image  
             ));
-            console.log(element);
+            // console.log(element);
     });
 })

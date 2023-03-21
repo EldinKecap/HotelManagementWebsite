@@ -4,17 +4,43 @@ async function getAllCheckedInUsers() {
     console.log(checkedInUsersAndRooms);
     let userSelect = document.getElementById('username');
     checkedInUsersAndRooms.forEach(async checkedInUsersAndRoom => {
-        let checkedInUserOption = document.createElement('option');
-        let responseUser = await fetch('http://localhost:5000/user/readOne/' + checkedInUsersAndRoom.user_id);
-        let user = await responseUser.json();
-        let responseRoom = await fetch('http://localhost:5000/room/readOne/' + checkedInUsersAndRoom.room_id);
-        let room = await responseRoom.json();
-        console.log(user);
-        checkedInUserOption.innerText = user[0].username + ' Room No.: ' + room[0].room_number;
-        checkedInUserOption.setAttribute('name','user_room_id');
-        checkedInUserOption.value= checkedInUsersAndRoom.id;
-        userSelect.appendChild(checkedInUserOption);
+        if (!checkedInUsersAndRoom.paid) {
+            let checkedInUserOption = document.createElement('option');
+            let responseUser = await fetch('http://localhost:5000/user/readOne/' + checkedInUsersAndRoom.user_id);
+            let user = await responseUser.json();
+            let responseRoom = await fetch('http://localhost:5000/room/readOne/' + checkedInUsersAndRoom.room_id);
+            let room = await responseRoom.json();
+            console.log(user);
+            checkedInUserOption.innerText = user[0].username + ' Room No.: ' + room[0].room_number;
+            checkedInUserOption.setAttribute('name', 'user_room_id');
+            checkedInUserOption.value = checkedInUsersAndRoom.id;
+            userSelect.appendChild(checkedInUserOption);
+        }
     });
 }
 
-getAllCheckedInUsers();
+async function setUpForm() {
+    await getAllCheckedInUsers();
+
+    let form = document.getElementById('checkOutForm');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // console.log('yo');
+        let formData = new FormData(form);
+
+        if (formData.get('username')) {
+            fetch('http://localhost:5000/checkIn/checkOut', {
+                method: 'PUT',
+                body: JSON.stringify({
+                    user_room_id: formData.get('username')
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+        }
+    });
+}
+
+setUpForm();

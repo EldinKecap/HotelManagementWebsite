@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.get('/readAll', checkInController.readAll);
 router.post('/create', checkInController.create);
+router.put('/checkOut', checkInController.checkOut);
 
 module.exports = router;

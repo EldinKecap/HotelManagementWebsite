@@ -5,7 +5,7 @@ let checkInController = {};
 
 checkInController.readAll = (req, res) => {
     checkInModel.readAll((result) => {
-        console.log(result);
+        // console.log(result);
         res.json(result);
     });
 }

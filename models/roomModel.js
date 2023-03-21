@@ -22,7 +22,7 @@ roomModel.readOneByRoomNumber = function (roomNumber, cb) {
 
 
 roomModel.create = function (room, cb) {
-    console.log([room.roomNumber, room.roomTypeId, room.imageLocation, room.description]);
+    // console.log([room.roomNumber, room.roomTypeId, room.imageLocation, room.description]);
     conn.execute('INSERT INTO room (room_number, types_of_room_id, image, description) VALUES (?,?,?,?)',
         [room.roomNumber, room.roomTypeId, room.imageLocation, room.description], (error, result) => {
             if (result) {

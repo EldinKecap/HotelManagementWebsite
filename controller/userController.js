@@ -40,15 +40,15 @@ userController.update = ( req, res ) => {
 
 userController.readAll = ( req, res ) => {
     userModel.readAll((result)=>{
-        console.log(result);
+        // console.log(result);
         res.send(result);
     })
 }
 
 userController.readOne = ( req, res ) => {
-    console.log( req.params.id );
+    // console.log( req.params.id );
     userModel.readOne( req.params.id, (result) => {
-        console.log(result);
+        // console.log(result);
         res.send(result);
     })
 }

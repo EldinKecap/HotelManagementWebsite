@@ -8,7 +8,7 @@ checkInModel.readAll = (cb) => {
     let result = conn.execute(sql, (error, result, fields) => {
         cb(result);
     });
-    console.log(result);
+    // console.log(result);
 }
 
 checkInModel.create = (checkInData, cb) => {
@@ -19,7 +19,7 @@ checkInModel.create = (checkInData, cb) => {
             return;
         } else {
             let sql = 'INSERT INTO user_room(room_id,user_id,time_of_arrival,paid,occupied) VALUES (?,?,?,?,?)';
-            console.log(checkInData);
+            // console.log(checkInData);
 
             let result = conn.execute(sql, [checkInData.room_id, checkInData.user_id, checkInData.time_of_arrival, false, true], (error, result, fields) => {
                 cb(result);
@@ -33,7 +33,7 @@ checkInModel.create = (checkInData, cb) => {
 
 
 checkInModel.checkOut = (checkOutData, cb) => {
-
+    console.log(checkOutData);
 }
 
 function checkIfRoomIsOccupied(roomId, cb) {

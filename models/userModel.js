@@ -2,7 +2,7 @@ const conn = require('./database');
 let userModel = {};
 
 userModel.create = function (createAccountInformation, cb) {
-    console.log(createAccountInformation);
+    // console.log(createAccountInformation);
     conn.execute('INSERT INTO user(username,password,logged_in,first_name,last_name) VALUES(?,?,?,?,?)',
         [createAccountInformation.username, createAccountInformation.password, true, createAccountInformation.firstName, createAccountInformation.lastName],
         (err, result, field) => {
@@ -41,7 +41,7 @@ userModel.readAll = (cb) => {
 
 userModel.readOne = (id, cb) => {
     conn.execute('SELECT * FROM user WHERE id = ?', [id], (err, res, field) => {
-        console.log(res);
+        // console.log(res);
         cb(res);
     })
 }
