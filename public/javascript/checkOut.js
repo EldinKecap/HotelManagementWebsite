@@ -4,7 +4,7 @@ async function getAllCheckedInUsers() {
     console.log(checkedInUsersAndRooms);
     let userSelect = document.getElementById('username');
     checkedInUsersAndRooms.forEach(async checkedInUsersAndRoom => {
-        if (!checkedInUsersAndRoom.paid) {
+        if (!checkedInUsersAndRoom.paid && checkedInUsersAndRoom.occupied == 1) {
             let checkedInUserOption = document.createElement('option');
             let responseUser = await fetch('http://localhost:5000/user/readOne/' + checkedInUsersAndRoom.user_id);
             let user = await responseUser.json();
@@ -38,6 +38,16 @@ async function setUpForm() {
                 headers: {
                     'Content-Type': 'application/json'
                 }
+            }).then(response => {
+                return response.json();
+            }).then(data => {
+                if (data.result.message) {
+                    document.getElementById('error').innerText = data.result.message;
+                }else{
+                    document.getElementById('error').innerText = data.result.error;
+                }
+                document.getElementById('username').innerHTML = '';
+                getAllCheckedInUsers();
             })
         }
     });

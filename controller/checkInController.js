@@ -21,7 +21,9 @@ checkInController.create = (req, res) => {
 }
 
 checkInController.checkOut = (req, res) => {
-    checkInModel.checkOut(req.body, () => { })
+    checkInModel.checkOut(req.body, (result) => {
+        res.json({ msg: 'Success', result })
+    })
 }
 
 module.exports = checkInController;
