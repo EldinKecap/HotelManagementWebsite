@@ -1,0 +1,48 @@
+
+.typeOfRoomForm a{
+    display: block;
+    opacity:0.8;
+}
+
+.typeOfRoomForm a:hover{
+    display: block;
+    text-decoration: underline;
+    opacity: 1;
+}
+
+.wrongInput{
+    border-bottom: 1px solid rgba(255, 0, 0, 0.681) !important;
+}
+
+.typeOfRoomForm{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    padding: 2vh;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: inset 0px 0px 10px 10px rgba(255, 255, 255, 0.137), 0px 0px 20px 5px rgba(0, 0, 0, 0.171);
+    margin-top: 20vh;
+    color: white;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    animation-name: popUp;
+    animation-duration: 0.75s;
+}
+
+.background{
+    background: url(../images/couldbeused3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+input[type='text'], input[type='password'] {
+    margin: 10px 10px 25px 10px; 
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    height: 30px;
+    color: white;
+}
