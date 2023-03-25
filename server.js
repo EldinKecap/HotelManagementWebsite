@@ -5,6 +5,7 @@ const roomRouter = require('./routes/roomRouter')
 const cors = require('cors')
 const upload = require('express-fileupload');
 const checkInRouter = require('./routes/checkInRouter');
+const typeOfRoomRouter = require('./routes/typeOfRoomRouter');
 const app = express();
 
 
@@ -17,6 +18,7 @@ app.use('/user', userRouter);
 app.use('/login', loginRouter);
 app.use('/room', roomRouter);
 app.use('/checkin', checkInRouter);
+app.use('/typeOfRoom', typeOfRoomRouter);
 
 app.get((req, res) => {
     res.sendFile('/index.html');
