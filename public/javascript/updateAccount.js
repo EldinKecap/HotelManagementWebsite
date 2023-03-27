@@ -10,7 +10,7 @@ updateButton.addEventListener('click',()=>{
     } 
     let user =JSON.parse(localStorage.getItem('user'));
     console.log(updateAccountInformation);
-    fetch('http://localhost:5000/user/update/' + user.id, {
+    fetch(window.location.origin + '/user/update/' + user.id, {
         method: "PUT",
         body: JSON.stringify({updateAccountInformation}),
         mode: 'cors',

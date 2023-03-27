@@ -1,6 +1,6 @@
 function getAllRoomTypes() {
     let roomTypeSelect = document.getElementById('roomTypeSelect');
-    fetch('http://localhost:5000/room/allTypes', {
+    fetch(window.location.origin + '/room/allTypes', {
         mode: "no-cors",
         headers: {
             'Content-Type': 'application/json'
@@ -30,7 +30,7 @@ form.addEventListener('submit', (e) => {
     let formData = new FormData(form);
     formData.append('roomNumber', roomNumber)
 
-    fetch('http://localhost:5000/room/update', {
+    fetch(window.location.origin + '/room/update', {
         method: 'PUT',
         body: formData,
         mode: 'cors'
@@ -39,7 +39,7 @@ form.addEventListener('submit', (e) => {
     }).then(data => {
         console.log(data);
         if (data.msg == 'success') {
-            window.location.href = 'http://localhost:5000/admin.html';
+            window.location.href = window.location.origin + '/admin.html';
         } else {
             let formTitle = document.getElementById('formTitle');
             formTitle.innerText = 'Room already exists';
@@ -50,7 +50,7 @@ form.addEventListener('submit', (e) => {
 let deleteBtn = document.getElementById('delete');
 deleteBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    fetch('http://localhost:5000/room/delete/' + roomNumber, {
+    fetch(window.location.origin + '/room/delete/' + roomNumber, {
         method: 'DELETE',
         mode: 'cors'
     }).then(res => {
@@ -58,7 +58,7 @@ deleteBtn.addEventListener('click', (e) => {
     }).then(data => {
         console.log(data);
         if (data.msg == 'success') {
-            window.location.href = 'http://localhost:5000/admin.html';
+            window.location.href = window.location.origin + '/admin.html';
         } else {
             console.log('SERVER ERROR');
         }

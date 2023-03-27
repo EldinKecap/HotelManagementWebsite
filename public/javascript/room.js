@@ -17,7 +17,7 @@ function Room(number, description, imageLink) {
 }
 
 
-fetch('http://localhost:5000/room/readAll/', {
+fetch(window.location.origin + '/room/readAll/', {
     method: "GET",
     mode: 'cors',
     headers: {

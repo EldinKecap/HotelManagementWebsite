@@ -30,7 +30,7 @@ try {
             logOut.id = 'logOutIcon';
             logOut.innerText = 'Log out'
             logOut.addEventListener('click', () => {
-                fetch('http://localhost:5000/login/logout', {
+                fetch(window.location.origin + '/login/logout', {
                     method: "POST",
                     body: JSON.stringify({ user }),
                     mode: 'cors',
@@ -49,7 +49,7 @@ try {
             let deleteProfile = document.createElement('li');
             deleteProfile.innerText = 'Delete profile';
             deleteProfile.addEventListener('click', () => {
-                fetch('http://localhost:5000/user/delete', {
+                fetch(window.location.origin + '/user/delete', {
                     method: "DELETE",
                     body: JSON.stringify({ user }),
                     mode: 'cors',

@@ -1,14 +1,14 @@
 async function getAllCheckedInUsers() {
-    let response = await fetch('http://localhost:5000/checkIn/readAll');
+    let response = await fetch(window.location.origin + '/checkIn/readAll');
     let checkedInUsersAndRooms = await response.json();
     console.log(checkedInUsersAndRooms);
     let userSelect = document.getElementById('username');
     checkedInUsersAndRooms.forEach(async checkedInUsersAndRoom => {
         if (!checkedInUsersAndRoom.paid && checkedInUsersAndRoom.occupied == 1) {
             let checkedInUserOption = document.createElement('option');
-            let responseUser = await fetch('http://localhost:5000/user/readOne/' + checkedInUsersAndRoom.user_id);
+            let responseUser = await fetch(window.location.origin + '/user/readOne/' + checkedInUsersAndRoom.user_id);
             let user = await responseUser.json();
-            let responseRoom = await fetch('http://localhost:5000/room/readOne/' + checkedInUsersAndRoom.room_id);
+            let responseRoom = await fetch(window.location.origin + '/room/readOne/' + checkedInUsersAndRoom.room_id);
             let room = await responseRoom.json();
             console.log(user);
             checkedInUserOption.innerText = user[0].username + ' Room No.: ' + room[0].room_number;
@@ -30,7 +30,7 @@ async function setUpForm() {
         let formData = new FormData(form);
 
         if (formData.get('username')) {
-            fetch('http://localhost:5000/checkIn/checkOut', {
+            fetch(window.location.origin + '/checkIn/checkOut', {
                 method: 'PUT',
                 body: JSON.stringify({
                     user_room_id: formData.get('username')

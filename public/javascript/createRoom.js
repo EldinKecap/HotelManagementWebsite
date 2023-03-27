@@ -1,6 +1,6 @@
 function getAllRoomTypes() {
     let roomTypeSelect = document.getElementById('roomTypeSelect');
-    fetch('http://localhost:5000/room/allTypes', {
+    fetch(window.location.origin + '/room/allTypes', {
         mode: "no-cors",
         headers: {
             'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ form.addEventListener('submit', (e) => {
     // formData.get('image')
     // formData.get('roomTypeId')
 /////FORMA RELOADA A NE BIT TREBALA
-    fetch('http://localhost:5000/room/create', {
+    fetch(window.location.origin + '/room/create', {
         method: 'POST',
         body: formData,
         mode: 'cors'
@@ -54,7 +54,7 @@ form.addEventListener('submit', (e) => {
     }).then(data => {
         console.log(data);
         if (data.msg == 'success') {
-            window.location.href = 'http://localhost:5000/admin.html';
+            window.location.href = window.location.origin + '/admin.html';
         }else{
             let formTitle = document.getElementById('formTitle');
             formTitle.innerText = 'Room already exists';

@@ -14,14 +14,14 @@ function Room(number, description, imageLink) {
     roomCard.appendChild(roomTitle);
     roomCard.appendChild(roomDescription);
     roomCard.addEventListener('click', () => {
-        window.location.href = 'http://localhost:5000/roomEdit.html?roomNumber=' + roomTitle.innerText;
+        window.location.href = window.location.origin + '/roomEdit.html?roomNumber=' + roomTitle.innerText;
     })
     return roomCard;
 }
 
 
 function getAllRooms() {
-    fetch('http://localhost:5000/room/readAll/', {
+    fetch(window.location.origin + '/room/readAll/', {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -80,7 +80,7 @@ customerMenuSelect.addEventListener('click', () => {
 })
 
 function getAllCustomers() {
-    fetch('http://localhost:5000/user/readAll/', {
+    fetch(window.location.origin + '/user/readAll/', {
         method: "GET",
         mode: 'cors',
         headers: {

@@ -11,7 +11,7 @@ function createTypeOfRoom() {
         console.log(data);
         if (data.type_of_room && data.price) {
             submitButton.disabled = true;
-            let response = await fetch('http://localhost:5000/typeOfRoom/create', {
+            let response = await fetch(window.location.origin + '/typeOfRoom/create', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {

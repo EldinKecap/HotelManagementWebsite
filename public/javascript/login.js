@@ -9,7 +9,7 @@ submitLogin.addEventListener('click', () => {
     let loginInfo = checkUserInput(username, password);
     console.log(loginInfo);
     if (Object.keys(loginInfo).length === 2) {
-        fetch('http://localhost:5000/login', {
+        fetch(window.location.origin + '/login', {
             method: "POST",
             body: JSON.stringify({loginInfo}),
             mode: 'cors',

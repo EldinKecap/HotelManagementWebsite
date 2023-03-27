@@ -1,5 +1,5 @@
 async function getAllUsers() {
-    let data = await fetch('http://localhost:5000/user/readAll')
+    let data = await fetch(window.location.origin + '/user/readAll')
     let users = await data.json();
     let userSelect = document.getElementById('username');
     console.log(users);
@@ -12,7 +12,7 @@ async function getAllUsers() {
 }
 
 async function getAllRooms() {
-    let data = await fetch('http://localhost:5000/room/readAll')
+    let data = await fetch(window.location.origin + '/room/readAll')
     let rooms = await data.json();
     let roomSelect = document.getElementById('roomNumber');
     console.log(rooms);
@@ -47,7 +47,7 @@ function getFormData() {
 checkInForm.addEventListener('submit', async (e) => {
     e.preventDefault()
     let formData = getFormData()
-    let response = await fetch('http://localhost:5000/checkIn/create', {
+    let response = await fetch(window.location.origin + '/checkIn/create', {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
