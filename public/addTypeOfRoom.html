@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/addTypeOfRoom.css">
     <script defer src="./javascript/header.js"></script>
-    <!-- <script type="module" defer src="./javascript/createAccount.js"></script> -->
+    <script defer src="./javascript/addTypeOfRoom.js"></script>
 </head>
 <body>
     <div class="background">
@@ -21,9 +21,9 @@
                         <input type="text" id="typeOfRoom" name="typeOfRoom" placeholder="Enter type of room">
                     </label>
                     <label for="price">
-                        <input type="text" id="price" name="price" placeholder="Enter price">
+                        <input type="number" id="price" name="price" placeholder="Enter price">
                     </label>
-                    
+                    <h4 id="error"></h4>
                     <button type="button" id="createTypeOfRoom">CREATE TYPE OF ROOM</button>
                 </div>
             </div>

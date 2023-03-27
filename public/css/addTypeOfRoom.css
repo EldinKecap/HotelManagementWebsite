@@ -35,10 +35,11 @@
     background: url(../images/couldbeused3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     height: 100vh;
 }
 
-input[type='text'], input[type='password'] {
+input[type='text'], input[type='number'] {
     margin: 10px 10px 25px 10px; 
     background-color: transparent;
     border: none;
