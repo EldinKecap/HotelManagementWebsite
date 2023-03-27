@@ -2,11 +2,11 @@ let mysql = require('mysql2');
 // console.log(mysql);
 
 let conn = mysql.createConnection({
-    database:'hotel_management_database',
-    host:'localhost',
-    user:'root',
-    password:'root',
-    port:3307
+    database:'sql7608905',
+    host:'sql7.freesqldatabase.com',
+    user:'sql7608905',
+    password: process.env.DB_PASSWORD ,
+    port:3306
 })
 
 // console.log(conn);
