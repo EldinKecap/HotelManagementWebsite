@@ -88,7 +88,7 @@ function logout() {
     localStorage.removeItem('user');
     loginIcon.id = 'loginIcon';
     loginIcon.innerHTML = "<a href='./login.html'>Log in</a>"
-    window.location.href = "http://localhost:5000/index.html";
+    window.location.href = window.location.origin + "/index.html";
 }
 
 try {  
