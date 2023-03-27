@@ -48,31 +48,6 @@ INSERT INTO `room` VALUES (28,123333,1,'123123123123','./roomImages/123333.jpg')
 UNLOCK TABLES;
 
 --
--- Table structure for table `service`
---
-
-DROP TABLE IF EXISTS `service`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `service` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `type_of_service` varchar(255) DEFAULT NULL,
-  `price_of_service` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `service`
---
-
-LOCK TABLES `service` WRITE;
-/*!40000 ALTER TABLE `service` DISABLE KEYS */;
-INSERT INTO `service` VALUES (1,'Teretana',10),(2,'Kino',10),(3,'Restoran',20),(4,'Bazen',10),(5,'Sauna',10);
-/*!40000 ALTER TABLE `service` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `types_of_room`
 --
 
@@ -83,8 +58,9 @@ CREATE TABLE `types_of_room` (
   `id` int NOT NULL AUTO_INCREMENT,
   `type_of_room` varchar(100) DEFAULT NULL,
   `price_of_room` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `type_of_room_UNIQUE` (`type_of_room`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,7 +69,7 @@ CREATE TABLE `types_of_room` (
 
 LOCK TABLES `types_of_room` WRITE;
 /*!40000 ALTER TABLE `types_of_room` DISABLE KEYS */;
-INSERT INTO `types_of_room` VALUES (1,'Jednokrevetna',20),(2,'Dvokrevetna',40),(3,'Apartman',60);
+INSERT INTO `types_of_room` VALUES (1,'Jednokrevetna',20),(2,'Dvokrevetna',40),(3,'Apartman',60),(4,'Krevet + balkon',100),(9,'New Room Type',50),(15,'New Room Types',50);
 /*!40000 ALTER TABLE `types_of_room` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,7 +125,7 @@ CREATE TABLE `user_room` (
   KEY `user_room_ibfk_2` (`room_id`),
   CONSTRAINT `user_room_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   CONSTRAINT `user_room_ibfk_2` FOREIGN KEY (`room_id`) REFERENCES `room` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,38 +134,8 @@ CREATE TABLE `user_room` (
 
 LOCK TABLES `user_room` WRITE;
 /*!40000 ALTER TABLE `user_room` DISABLE KEYS */;
-INSERT INTO `user_room` VALUES (24,28,3,'2023-03-18',0,1),(25,28,3,'2023-03-18',0,1),(26,29,13,'2023-03-18',0,1),(27,32,3,'2023-03-18',0,1),(28,37,25,'2023-03-18',0,1);
+INSERT INTO `user_room` VALUES (29,28,3,'2023-03-20',40,0),(30,29,3,'2023-03-20',40,0),(31,28,3,'2023-03-22',0,0),(32,31,23,'2023-03-22',0,0),(33,28,3,'2023-03-22',0,0),(34,34,3,'2023-03-22',0,0),(35,37,3,'2023-03-22',0,0),(36,28,3,'2023-03-27',0,1);
 /*!40000 ALTER TABLE `user_room` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `user_service`
---
-
-DROP TABLE IF EXISTS `user_service`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user_service` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `service_id` int DEFAULT NULL,
-  `user_id` int DEFAULT NULL,
-  `time_of_use` date DEFAULT NULL,
-  `paid` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `service_id` (`service_id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `user_service_ibfk_1` FOREIGN KEY (`service_id`) REFERENCES `service` (`id`),
-  CONSTRAINT `user_service_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user_service`
---
-
-LOCK TABLES `user_service` WRITE;
-/*!40000 ALTER TABLE `user_service` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user_service` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -201,4 +147,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-18 20:02:52
+-- Dump completed on 2023-03-27 15:00:44
