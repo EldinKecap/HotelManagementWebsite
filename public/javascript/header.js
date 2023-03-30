@@ -91,18 +91,28 @@ function logout() {
     window.location.href = window.location.origin + "/index.html";
 }
 
-try {  
+try {
     if (JSON.parse(localStorage.getItem('user')).admin) {
-            let navList = document.querySelector('.navList');
-            let adminPanelNav = document.createElement('li');
-            let adminPanelNavLink = document.createElement('a');
-            adminPanelNavLink.setAttribute('href', './admin.html');
-            adminPanelNavLink.innerText = 'Admin';
-            adminPanelNav.appendChild(adminPanelNavLink);
-            adminPanelNav.className = 'navListItem';
-            navList.removeChild(navList.children[1]);
-            navList.prepend(adminPanelNav);
-        }
+        let navList = document.querySelector('.navList');
+        let adminPanelNav = document.createElement('li');
+        let adminPanelNavLink = document.createElement('a');
+        adminPanelNavLink.setAttribute('href', './admin.html');
+        adminPanelNavLink.innerText = 'Admin';
+        adminPanelNav.appendChild(adminPanelNavLink);
+        adminPanelNav.className = 'navListItem';
+        navList.removeChild(navList.children[1]);
+        navList.prepend(adminPanelNav);
+    } else if (JSON.parse(localStorage.getItem('user')).admin === null) {
+        let navList = document.querySelector('.navList');
+        let userPanelNav = document.createElement('li');
+        let userPanelNavLink = document.createElement('a');
+        userPanelNavLink.setAttribute('href', './user.html');
+        userPanelNavLink.innerText = 'Account';
+        userPanelNav.appendChild(userPanelNavLink);
+        userPanelNav.className = 'navListItem';
+        navList.removeChild(navList.children[1]);
+        navList.prepend(userPanelNav);
+    }
 } catch (error) {
     console.log('user not logged in');
 }
