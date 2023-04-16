@@ -11,6 +11,13 @@ checkInModel.readAll = (cb) => {
     // console.log(result);
 }
 
+checkInModel.readOne = (userId, cb) => {
+    let sql = "SELECT * FROM user_room WHERE user_id = ? AND occupied = 1;"
+    let result = conn.execute(sql, [userId], (error, result, fields) => {
+        cb(result);
+    });
+}
+
 checkInModel.create = (checkInData, cb) => {
 
     checkIfRoomIsOccupied(checkInData.room_id, (occupiedStatus) => {

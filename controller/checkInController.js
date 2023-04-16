@@ -10,6 +10,13 @@ checkInController.readAll = (req, res) => {
     });
 }
 
+checkInController.readOne = (req, res) => {
+    checkInModel.readOne(req.params.userId, (result) => {
+        // console.log(result);
+        res.json(result);
+    });
+}
+
 checkInController.create = (req, res) => {
     checkInModel.create(req.body, (result) => {
         if (result.hasOwnProperty('error')) {
